@@ -96,7 +96,10 @@ module.exports = terria
       updateApplicationOnMessageFromParentWindow(terria, window);
 
       // Show a modal disclaimer before user can do anything else.
-      if (defined(terria.configParameters.globalDisclaimer)) {
+      if (
+        defined(terria.configParameters.globalDisclaimer) &&
+        terria.configParameters.globalDisclaimer.show
+      ) {
         var globalDisclaimer = terria.configParameters.globalDisclaimer;
         var hostname = window.location.hostname;
         if (
