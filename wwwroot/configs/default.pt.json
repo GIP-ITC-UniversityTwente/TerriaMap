@@ -1,0 +1,106 @@
+{
+  "initializationUrls": ["/init/init.pt.json"],
+  "parameters": {
+    "enableConsoleAnalytics": false,
+    "googleUrlShortenerKey": null,
+    "googleAnalyticsKey": null,
+    "googleAnalyticsOptions": null,
+    "bingMapsKey": "AqdAVaMy9SW3I4_xwbx3QzIhZV3fjaadGqmDm4VvRgvuSW2GncAOViUvm0cmWlSo",
+    "disclaimer": {
+      "text": "",
+      "url": ""
+    },
+    "globalDisclaimer": {
+      "show": false,
+      "confirmationRequired": false,
+      "buttonTitle": "Ok",
+      "title": "Bem-vindo à plataforma de estatísticas agrícolas de Moçambique",
+      "enableOnLocalhost": true
+    },
+    "developerAttribution": {
+      "text": "MAFRA",
+      "link": "https://www.mafra.go.kr/"
+    },
+    "appName": "MAFRA Plataforma - Estatísticas Agrícolas de Moçambique",
+    "brandBarElements": [
+      "",
+      "<a target=\"_blank\" href=\"https://mapfra.itc.utwente.nl\"><img src=\"/images/logo.svg\" height=\"52\" title=\"Version: {{version}}\" /></a>",
+      ""
+    ],
+    "supportEmail": "r.o.ohuru@utwente.nl",
+    "proj4ServiceBaseUrl": "proj4def/",
+    "feedbackUrl": "feedback",
+    "mobileDefaultViewerMode": "2d",
+    "experimentalFeatures": true,
+    "cesiumIonAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhMjZmMmE4OS04YTdkLTQ3ZWYtODEzOS01MzQzNmMyZDY3MTIiLCJpZCI6MjE4NzgsInNjb3BlcyI6WyJhc2wiLCJhc3IiLCJhc3ciLCJnYyJdLCJpYXQiOjE1ODA4MTkzOTR9.9CBEmlItnEewE3h_B28rupykMHo_aCJTpZGz-djTIGE",
+    "useCesiumIonBingImagery": true,
+    "showWelcomeMessage": true,
+    "welcomeMessageVideo": {
+      "show": true,
+      "logo": "",
+      "mobileLogo": "",
+      "hideActionButtons": false,
+      "title": "Bem-vindo à Plataforma MAFRA  - Estatísticas Agrícolas de Moçambique",
+      "mobileTitle": "MAFRA Plataforma",
+      "videoUrl": null,
+      "placeholderImage": null,
+      "description": "O projeto MAFRA visa desenvolver e implementar um sistema robusto para estatísticas da produção agrícola em Moçambique. O eventual utilizador previsto é o Ministério da Agricultura e Desenvolvimento Rural (MADER). Atualmente, o nosso projeto piloto de segundo ano envolve três províncias: Gaza, Manica e Zambézia. Atualmente, o trabalho de campo está a ser realizado na província de Manica, a primeira que abordamos. Originalmente, estávamos programados para começar na província de Gaza, mais a sul, mas as cheias impediram a realização do trabalho. Devido ao trabalho de campo em curso, estamos felizes por ver os dados a chegar e acompanhar o progresso. O projeto é uma colaboração entre o IFPRI (Washington, DC), UT/ITC (GIP, NRS), a Universidade Eduardo Mondlane (Maputo, Moçambique) e a Universidade Nacional de Seul (Coreia do Sul). O financiamento provém do Ministério da Agricultura, Alimentação e Assuntos Rurais da Coreia do Sul (MAFRA).",
+      "mobileDescription": "O projeto MAFRA visa desenvolver e implementar um sistema robusto para estatísticas da produção agrícola em Moçambique. O eventual utilizador previsto é o Ministério da Agricultura e Desenvolvimento Rural (MADER). Atualmente, o nosso projeto piloto do segundo ano envolve três províncias: Gaza, Manica e Zambézia. Atualmente, o trabalho de campo está a ser realizado na província de Manica, a primeira que estamos a abordar. Originalmente, estávamos programados para começar na província de Gaza, mais a sul, mas as cheias impediram a realização do trabalho. Devido ao trabalho de campo em curso, estamos felizes por ver os dados a chegar e acompanhar o progresso."
+    },
+    "showInAppGuides": false,
+    "languageConfiguration": {
+      "enabled": true,
+      "debug": false,
+      "languages": {
+        "en": "English",
+        "pt": "Portuguese"
+      },
+      "fallbackLanguage": "pt"
+    },
+    "searchBarConfig": {},
+    "searchProviders": [
+      {
+        "id": "search-provider/cesium-ion",
+        "type": "cesium-ion-search-provider",
+        "name": "translate#viewModels.searchLocations",
+        "flightDurationSeconds": 1.5,
+        "minCharacters": 3
+      }
+    ],
+    "relatedMaps": [
+      {
+        "imageUrl": "https://mapfra.itc.utwente.nl/static/images/monitor.jpg",
+        "url": "https://mapfra.itc.utwente.nl/monitor/",
+        "title": "Monitoramento de Trabalho de Campo",
+        "description": "Você pode usar este link para monitorar o progresso do trabalho de campo nas províncias de Gaza, Manica e Zambézia."
+      },
+      {
+        "imageUrl": "https://mapfra.itc.utwente.nl/static/images/download.jpg",
+        "url": "https://mapfra.itc.utwente.nl/download/",
+        "title": "Baixar mapa base",
+        "description": "Você pode usar este link para baixar mapas base offline para parcelas de trabalho de campo nas províncias de Gaza, Manica e Zambézia."
+      }
+    ],
+    "extraCreditLinks": [
+      {
+        "text": "ITC University of Twente",
+        "url": "https://www.itc.nl/"
+      },
+      {
+        "text": "UEM",
+        "url": "https://uem.mz/"
+      },
+      {
+        "text": "map.extraCreditLinks.disclaimer",
+        "url": "https://mapfra.itc.utwente.nl/about"
+      }
+    ],
+    "leafletAttributionPrefix": "<div class=\"partners\" style=\"position: absolute; bottom:80px; padding: 2px 2px 2px 0px; background: rgba(0,0,0, 0.1); border-radius: 0px 5px 5px 0px;  \"><style> .partners img {  height: 60px !important;}</style><div style=\"background: white\"><img src=\"https://mapfra.itc.utwente.nl/static/images/mafra-logo.png\" alt=\"Mafra Logo\" /><img src=\"https://mapfra.itc.utwente.nl/static/images/image.png\" alt=\"Partners Logo\" /></div></div>",
+    "hideTerriaLogo": true,
+    "aboutButtonHrefUrl": "https://mapfra.itc.utwente.nl/about",
+    "shareUrl": null,
+    "theme": {
+      "logoHeight": "70px"
+    }
+  }
+}

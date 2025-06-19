@@ -1,0 +1,289 @@
+{
+  "homeCamera": {
+    "north": -10.4712,
+    "east": 40.8393,
+    "south": -26.8687,
+    "west": 30.2174
+  },
+  "catalog": [
+    {
+      "id": "item-landcover",
+      "type": "cog",
+      "name": "Land Cover",
+      "url": "https://cog-mafra.s3.amazonaws.com/raster/landcover.tif",
+      "isOpenInWorkbench": false,
+      "renderOptions": {
+        "nodata": 0,
+        "resampleMethod": "nearest",
+        "single": {
+          "colors": [
+            [0, "rgba(255, 255, 255, 0)"],
+            [1, "#df73ff"],
+            [3, "#ffff00"],
+            [4, "#ff0000"],
+            [5, "#a8a800"],
+            [6, "#00734c"],
+            [7, "#732600"],
+            [8, "#98e600"],
+            [9, "#00ffc5"],
+            [10, "#3399FF"]
+          ],
+          "type": "discrete",
+          "useRealValue": true
+        }
+      },
+      "featureInfoTemplate": {
+        "name": "Land Cover",
+        "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+        "partials": {
+          "0": "No data",
+          "1": "Maize",
+          "3": "Mixed fields",
+          "4": "Built up",
+          "5": "Shrub",
+          "6": "Trees",
+          "7": "Bare",
+          "8": "Grass",
+          "9": "Rice",
+          "10": "Water"
+        }
+      },
+      "legends": [
+        {
+          "items": [
+            {
+              "title": "Maize",
+              "color": "#df73ff",
+              "outlineColor": "#7d73b2",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Mixed fields",
+              "color": "#ffff00",
+              "outlineColor": "#186118",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Built up",
+              "color": "#ff0000",
+              "outlineColor": "#A0C9A3",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Shrub",
+              "color": "#a8a800",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Trees",
+              "color": "#00734c",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Bare",
+              "color": "#732600",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Grass",
+              "color": "#98e600",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Rice",
+              "color": "rgba(230, 230, 77, 0.8)",
+              "outlineColor": "#00ffc5",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Water",
+              "color": "#3399FF",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-ndvi",
+      "type": "wms",
+      "name": "NDVI Profiles",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+      "layers": "mapfra:ndvi",
+      "hideLegendInWorkbench": true,
+      "opacity": 1,
+      "show": true,
+      "parameters": {
+        "srs": "EPSG:3857",
+        "version": "1.1.1"
+      },
+      "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
+      "featureInfoTemplate": {
+        "name": "NDVI Cluster {{GRAY_INDEX}}",
+        "template": "<p>NDVI Profile.</p><chart title='NDVI profile' chart-type='line' src='https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile/{{GRAY_INDEX}}/csv' x-column='Dekad' y-columns='10-th Percentile,50-th Percentile,90-th Percentile' column-units='Dekad'></chart>"
+      },
+      "customProperties": {
+        "charts": [
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#bae4b3"]
+            }
+          },
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#006d2c"]
+            }
+          },
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#bae4b3"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-plots",
+      "type": "wms",
+      "name": "Sampling Areas (SA)",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+      "layers": "mapfra:plots",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857",
+        "version": "1.1.1"
+      },
+      "legends": [
+        {
+          "title": "Plot segments",
+          "imageScaling": 0.6,
+          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:segments_en&LEGEND_OPTIONS=fontName%3ACourier%3BfontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3Bdpi%3A182&transparent=false"
+        },
+        {
+          "title": "Sampling Plots",
+          "imageScaling": 0.5,
+          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:sample_plots500&LEGEND_OPTIONS=fontName%3ACourier%3fontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3BfontColor%3A0xffffff%3Bdpi%3A182&transparent=true"
+        }
+      ]
+    },
+    {
+      "id": "item-segmentscores",
+      "type": "wms",
+      "name": "Segment Crop Scores",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:segment_crop_scores",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      }
+    },
+    {
+      "id": "item-landforms",
+      "type": "wms",
+      "name": "Land Forms",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_landforms",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Land Form - {{landform}}",
+        "template": "<table><tr><td><b>Landform Type</b></td><td>{{landform}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+      }
+    },
+    {
+      "id": "item-farmingclasses",
+      "type": "wms",
+      "name": "Farming Classes",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_farmingclasses",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Farming Class - {{fcname}}",
+        "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+      }
+    },
+    {
+      "id": "item-strata",
+      "type": "wms",
+      "name": "Strata",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_strata",
+      "opacity": 1,
+      "show": true,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Strata - {{stratum}}",
+        "template": "<table><tr><td><b>Stratum</b></td><td>{{stratum}}</td></tr><tr><td><b>Landform</b></td><td>{{landform}}</td></tr><tr><td><b>Farming class</b></td><td>{{fcname}}</td></tr><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+      },
+      "isOpenInWorkbench": false
+    },
+    {
+      "type": "group",
+      "id": "item-admins",
+      "name": "Administrative areas",
+      "description": "Statistical analysis of crop data",
+      "members": [
+        {
+          "id": "item-districts",
+          "type": "wms",
+          "name": "Districts",
+          "layers": "mapfra:mvw_districts",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "isOpenInWorkbench": true,
+          "hideLegendInWorkbench": true,
+          "parameters": {
+            "srs": "EPSG:3857"
+          },
+          "featureInfoTemplate": {
+            "template": "<table><tr><td>Province</b></td><td>{{province}}</td></tr><tr><td>District</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivated vs uncultivated' open='true'><chart title='Cultivated vs Uncultivated' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv' x-column='Farming class'  y-columns='Area (ha)' column-units='Ha'></chart></collapsible><collapsible title='Crops'><csvtable title='Uncultivated' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv' y-columns='Crop Name,Area (ha)' column-titles='Crop Name,Area (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv' y-columns='Strata,Area (ha)' column-titles='Strata,Area (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
+          },
+          "customProperties": {
+            "charts": [
+              {
+                "type": "bar",
+                "xAxis": {
+                  "colors": ["#a0c9a3", "#186118", "#7d73b2", "#e6e64d"]
+                }
+              }
+            ]
+          },
+          "dimensions": { "Province": "Gaza" },
+          "availableDimensions": [
+            {
+              "layerName": "mapfra:mvw_districts",
+              "dimensions": [
+                {
+                  "name": "Province",
+                  "default": "Gaza",
+                  "multipleValues": false,
+                  "values": ["Gaza", "Manica", "Zambezia"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "viewerMode": "2d",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-openstreetmap",
+    "previewBaseMapId": "basemap-openstreetmap"
+  },
+  "workbench": ["item-districts", "item-strata"]
+}

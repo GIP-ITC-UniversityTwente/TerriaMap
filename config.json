@@ -1,0 +1,19 @@
+{
+  "main": {
+    "prod": ["mapfra.itc.utwente.nl"]
+  },
+  "sites": {
+    "review": {
+      "default": "/configs/default.json"
+    },
+    "apps": {
+      "default": "/configs/default.json"
+    }
+  },
+  "languages": {
+    "default": {
+      "supportedLangs": ["en", "pt"],
+      "defaultLang": "en"
+    }
+  }
+}
