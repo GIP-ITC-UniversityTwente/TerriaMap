@@ -14,14 +14,14 @@
       "show": false,
       "confirmationRequired": false,
       "buttonTitle": "Ok",
-      "title": "Welcome to the Mozambique crop statistics platform",
+      "title": "Welcome to the Statistics from Space Platform -  Mozambique Crop Statistics",
       "enableOnLocalhost": true
     },
     "developerAttribution": {
-      "text": "MAFRA",
+      "text": "Stats4Space",
       "link": "https://www.mafra.go.kr/"
     },
-    "appName": "MAFRA Platform",
+    "appName": "Statistics from Space",
     "brandBarElements": [
       "",
       "<a target=\"_blank\" href=\"https://mapfra.itc.utwente.nl\"><img src=\"/images/logo.svg\" height=\"52\" title=\"Version: {{version}}\" /></a>",
@@ -40,12 +40,12 @@
       "logo": "",
       "mobileLogo": "",
       "hideActionButtons": false,
-      "title": "Welcome to the MAFRA Platform -  Mozambique Crop Statistics",
-      "mobileTitle": "MAFRA Platform",
+      "title": "Welcome to the Statistics from Space Platform -  Mozambique Crop Statistics",
+      "mobileTitle": "Statistics from Space",
       "videoUrl": null,
       "placeholderImage": null,
-      "description": "The MAFRA project aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress. The project is a collaboration between IFPRI (Washington, DC), UT/ITC (GIP, NRS), Universidade Eduardo Mondlane (Maputo, Mozambique) and Seoul National University (South Korea). Funding comes from South Korea's Ministry of Agriculture, Food and Rural Affairs (MAFRA).",
-      "mobileDescription": "The MAFRA project aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress."
+      "description": "The Statistics from Space aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress. The project is a collaboration between IFPRI (Washington, DC), UT/ITC (GIP, NRS), Universidade Eduardo Mondlane (Maputo, Mozambique) and Seoul National University (South Korea). Funding comes from South Korea's Ministry of Agriculture, Food and Rural Affairs (MAFRA).",
+      "mobileDescription": "The Statistics from Space aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress."
     },
     "showInAppGuides": false,
     "languageConfiguration": {
