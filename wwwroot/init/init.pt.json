@@ -240,7 +240,7 @@
       "description": "Áreas administrativas de Moçambique",
       "members": [
         {
-          "id": "item-districts",
+          "id": "item-districtos",
           "type": "wms",
           "name": "Distritos",
           "layers": "mapfra:mvw_districts",
@@ -269,7 +269,7 @@
               "layerName": "mapfra:mvw_districts",
               "dimensions": [
                 {
-                  "name": "Provincia",
+                  "name": "Province",
                   "default": "Gaza",
                   "multipleValues": false,
                   "values": ["Gaza", "Manica", "Zambezia"]
@@ -286,5 +286,5 @@
     "defaultBaseMapId": "basemap-openstreetmap",
     "previewBaseMapId": "basemap-openstreetmap"
   },
-  "workbench": ["item-districts", "item-strata"]
+  "workbench": ["item-districtos", "item-strata"]
 }
