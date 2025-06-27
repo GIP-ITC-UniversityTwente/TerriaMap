@@ -7,6 +7,144 @@
   },
   "catalog": [
     {
+      "type": "group",
+      "id": "item-statistics",
+      "name": "Crop Statistics",
+      "description": "Statistical analysis of crop data",
+      "members": [
+        {
+          "id": "item-crop-percentages",
+          "type": "csv",
+          "name": "Crop Percentages",
+          "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
+          "isOpenInWorkbench": true,
+          "hideLegendInWorkbench": false,
+          "defaultStyle": {
+            "color": {
+              "nullColor": "rgba(255,255,255,0.1)",
+              "colorPalette": "Greens"
+            }
+          },
+          "columns": [
+            {
+              "name": "prov_name",
+              "type": "hidden"
+            },
+            {
+              "name": "dist_name",
+              "type": "hidden"
+            },
+            {
+              "name": "crop_en",
+              "type": "hidden"
+            },
+            {
+              "title": "Percentage",
+              "name": "percentage",
+              "type": "string"
+            },
+            {
+              "title": "District Area",
+              "name": "district_area",
+              "type": "string"
+            },
+            {
+              "title": "Crop Area",
+              "name": "crop_area",
+              "type": "string"
+            }
+          ],
+          "defaultColumn": {
+            "name": "percentage"
+          },
+          "dimensions": { "Crops": "Corn" },
+          "availableDimensions": [
+            {
+              "layerName": "Crop Percentages",
+              "dimensions": [
+                {
+                  "name": "Crops",
+                  "default": "Corn",
+                  "multipleValues": false,
+                  "values": [
+                    "Beans",
+                    "Butter Bean",
+                    "Cabbage",
+                    "Cashew",
+                    "Cassava",
+                    "Citrus",
+                    "Coconut",
+                    "Corn",
+                    "Cotton",
+                    "Eggplant",
+                    "Garlic",
+                    "Ginger",
+                    "Green Bean",
+                    "Hemb Bean",
+                    "Jugo Bean",
+                    "Kidney Potato",
+                    "Large Peanut",
+                    "Leaf Tea",
+                    "Lettuce",
+                    "Macadamia Nuts",
+                    "Mango",
+                    "Millet",
+                    "Non-Orange-Fleshed Sweet Potato",
+                    "Okra",
+                    "Oloko Bean",
+                    "Onion",
+                    "Orange-Fleshed Sweet Potato",
+                    "Other Beans",
+                    "Other Vegetable",
+                    "Paprika",
+                    "Pepper",
+                    "Pigbean",
+                    "Piri-Piri",
+                    "Rice",
+                    "Sesame",
+                    "Sisal",
+                    "Small Peanut",
+                    "Sorghum",
+                    "Soybean",
+                    "Squash",
+                    "Sugarcane",
+                    "Sunflower",
+                    "Tobacco",
+                    "Tomato",
+                    "Trees",
+                    "Trichilia Emetica",
+                    "Vegetables",
+                    "Wheat",
+                    "Yam or Amadumbe"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-crop-provinces",
+      "type": "csv",
+      "name": "Crop Area by Province",
+      "url": "/init/poa_code.csv",
+      "isOpenInWorkbench": true,
+      "hideLegendInWorkbench": true,
+      "columns": [
+        {
+          "title": "Province",
+          "name": "province",
+          "type": "string"
+        },
+        {
+          "title": "Percentage",
+          "name": "area",
+          "type": "number"
+        }
+      ]
+    },
+    {
       "id": "item-landcover",
       "type": "cog",
       "name": "Land Cover",
@@ -223,7 +361,7 @@
       "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
       "layers": "mapfra:mvw_strata",
       "opacity": 1,
-      "show": true,
+      "show": false,
       "parameters": {
         "srs": "EPSG:3857"
       },
@@ -245,7 +383,7 @@
           "name": "Districts",
           "layers": "mapfra:mvw_districts",
           "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-          "isOpenInWorkbench": true,
+          "isOpenInWorkbench": false,
           "hideLegendInWorkbench": true,
           "parameters": {
             "srs": "EPSG:3857"
@@ -286,5 +424,5 @@
     "defaultBaseMapId": "basemap-openstreetmap",
     "previewBaseMapId": "basemap-openstreetmap"
   },
-  "workbench": ["item-districts", "item-strata"]
+  "workbench": ["item-statistics", "item-districts", "item-strata"]
 }

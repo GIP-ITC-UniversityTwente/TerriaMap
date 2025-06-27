@@ -7,6 +7,124 @@
   },
   "catalog": [
     {
+      "type": "group",
+      "id": "item-statistics",
+      "name": "Estatísticas Plantações",
+      "description": "Estatísticas Plantações",
+      "members": [
+        {
+          "id": "item-crop-percentages",
+          "type": "csv",
+          "name": "Porcentagem de Plantações",
+          "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=po",
+          "isOpenInWorkbench": true,
+          "hideLegendInWorkbench": false,
+          "defaultStyle": {
+            "color": {
+              "nullColor": "rgba(255,255,255,0.1)",
+              "colorPalette": "Greens"
+            }
+          },
+          "defaultColumn": {
+            "name": "percentage"
+          },
+          "columns": [
+            {
+              "name": "prov_name",
+              "type": "hidden"
+            },
+            {
+              "name": "dist_name",
+              "type": "hidden"
+            },
+            {
+              "name": "crop_po",
+              "type": "hidden"
+            },
+            {
+              "title": "Percentagem",
+              "name": "percentage",
+              "type": "number"
+            },
+            {
+              "title": "Área Distrito",
+              "name": "district_area",
+              "type": "number"
+            },
+            {
+              "title": "Plantações Área",
+              "name": "crop_area",
+              "type": "number"
+            }
+          ],
+          "dimensions": { "Crops": "Milho" },
+          "availableDimensions": [
+            {
+              "layerName": "Porcentagem de Plantações",
+              "dimensions": [
+                {
+                  "name": "Crops",
+                  "default": "Milho",
+                  "multipleValues": false,
+                  "values": [
+                    "Abóbora",
+                    "Alface",
+                    "Algodāo",
+                    "Alho",
+                    "Amendoim Grande",
+                    "Amendoim Pequeno",
+                    "Arroz",
+                    "Árvore",
+                    "Batata Doce de Polpa Alaranjada",
+                    "Batata Doce de Polpa Nāo Alaranjada",
+                    "Batata Reno",
+                    "Beringela",
+                    "Cajueiros",
+                    "Cana de Açucar",
+                    "Cebola",
+                    "Chá Folha",
+                    "Citrinos",
+                    "Coqueiros",
+                    "Feijāo Bóer",
+                    "Feijāo Jugo",
+                    "Feijāo Manteiga",
+                    "Feijāo Nhemba",
+                    "Feijāo Oloko",
+                    "Feijāo Verde",
+                    "Feijões",
+                    "Gengibre",
+                    "Gergelim",
+                    "Girassol",
+                    "Horticolas",
+                    "Inhame ou Madumbi",
+                    "Macadāmia",
+                    "Mafureiras",
+                    "Mandioca",
+                    "Mangueiras",
+                    "Mapira",
+                    "Mexoeira",
+                    "Milho",
+                    "Outra Horticola",
+                    "Outros Feijōes",
+                    "Paprica",
+                    "Pimenta",
+                    "Piri-Piri",
+                    "Quiabo",
+                    "Repolho",
+                    "Sisal Folha",
+                    "Soja",
+                    "Tabaco",
+                    "Tomate",
+                    "Trigo"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "item-landcover",
       "type": "cog",
       "name": "Cobertura da terra",
@@ -286,5 +404,5 @@
     "defaultBaseMapId": "basemap-openstreetmap",
     "previewBaseMapId": "basemap-openstreetmap"
   },
-  "workbench": ["item-districtos", "item-strata"]
+  "workbench": ["item-statistics", "item-districtos", "item-strata"]
 }
