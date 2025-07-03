@@ -10,117 +10,272 @@
       "type": "group",
       "id": "item-statistics",
       "name": "Crop Statistics",
+      "isOpen": true,
       "description": "Statistical analysis of crop data",
       "members": [
         {
-          "id": "item-crop-percentages",
-          "type": "csv",
-          "name": "Crop Percentages",
-          "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
-          "isOpenInWorkbench": true,
-          "hideLegendInWorkbench": false,
-          "defaultStyle": {
-            "color": {
-              "nullColor": "rgba(255,255,255,0.1)",
-              "colorPalette": "Greens"
-            }
-          },
-          "columns": [
+          "type": "group",
+          "id": "item-statistics-district",
+          "description": "Statistical analysis of crop data by district. Coverage of crops, cultivated vs uncultivated land, and strata for each district in Gaza, Manica and Zambezia.",
+          "name": "District Statistics",
+          "members": [
             {
-              "name": "prov_name",
-              "type": "hidden"
-            },
-            {
-              "name": "dist_name",
-              "type": "hidden"
-            },
-            {
-              "name": "crop_en",
-              "type": "hidden"
-            },
-            {
-              "title": "Percentage",
-              "name": "percentage",
-              "type": "string"
-            },
-            {
-              "title": "District Area",
-              "name": "district_area",
-              "type": "string"
-            },
-            {
-              "title": "Crop Area",
-              "name": "crop_area",
-              "type": "string"
-            }
-          ],
-          "defaultColumn": {
-            "name": "percentage"
-          },
-          "dimensions": { "Crops": "Corn" },
-          "availableDimensions": [
-            {
-              "layerName": "Crop Percentages",
-              "dimensions": [
+              "id": "item-crop-percentages",
+              "type": "csv",
+              "name": "Crop Coverage (Area/Percentage) per District",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
+              "isOpenInWorkbench": true,
+              "hideLegendInWorkbench": false,
+              "keepOnTop": true,
+              "activeStyle": "percentage",
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Greens",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "columns": [
                 {
-                  "name": "Crops",
-                  "default": "Corn",
-                  "multipleValues": false,
-                  "values": [
-                    "Beans",
-                    "Butter Bean",
-                    "Cabbage",
-                    "Cashew",
-                    "Cassava",
-                    "Citrus",
-                    "Coconut",
-                    "Corn",
-                    "Cotton",
-                    "Eggplant",
-                    "Garlic",
-                    "Ginger",
-                    "Green Bean",
-                    "Hemb Bean",
-                    "Jugo Bean",
-                    "Kidney Potato",
-                    "Large Peanut",
-                    "Leaf Tea",
-                    "Lettuce",
-                    "Macadamia Nuts",
-                    "Mango",
-                    "Millet",
-                    "Non-Orange-Fleshed Sweet Potato",
-                    "Okra",
-                    "Oloko Bean",
-                    "Onion",
-                    "Orange-Fleshed Sweet Potato",
-                    "Other Beans",
-                    "Other Vegetable",
-                    "Paprika",
-                    "Pepper",
-                    "Pigbean",
-                    "Piri-Piri",
-                    "Rice",
-                    "Sesame",
-                    "Sisal",
-                    "Small Peanut",
-                    "Sorghum",
-                    "Soybean",
-                    "Squash",
-                    "Sugarcane",
-                    "Sunflower",
-                    "Tobacco",
-                    "Tomato",
-                    "Trees",
-                    "Trichilia Emetica",
-                    "Vegetables",
-                    "Wheat",
-                    "Yam or Amadumbe"
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "District",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Crop",
+                  "name": "crop_en",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Percentage",
+                  "name": "percentage",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 2
+                  }
+                },
+                {
+                  "title": "District Area (Ha)",
+                  "name": "district_area",
+                  "type": "hidden",
+                  "format": {
+                    "maximumFractionDigits": 3
+                  }
+                },
+                {
+                  "title": "Crop Area (Ha)",
+                  "name": "crop_area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 3
+                  }
+                }
+              ],
+              "defaultColumn": {
+                "name": "percentage"
+              },
+              "dimensions": { "Crops": "Corn" },
+              "availableDimensions": [
+                {
+                  "layerName": "Crop Percentages",
+                  "dimensions": [
+                    {
+                      "name": "Crops",
+                      "default": "Corn",
+                      "multipleValues": false,
+                      "values": [
+                        "Beans",
+                        "Cabbage",
+                        "Cassava",
+                        "Corn",
+                        "Cotton",
+                        "Eggplant",
+                        "Garlic",
+                        "Ginger",
+                        "Kidney Potato",
+                        "Large Peanut",
+                        "Leaf Tea",
+                        "Lettuce",
+                        "Millet",
+                        "Non-Orange-Fleshed Sweet Potato",
+                        "Okra",
+                        "Onion",
+                        "Orange-Fleshed Sweet Potato",
+                        "Other Vegetable",
+                        "Paprika",
+                        "Pepper",
+                        "Piri-Piri",
+                        "Rice",
+                        "Sesame",
+                        "Sisal",
+                        "Small Peanut",
+                        "Sorghum",
+                        "Soybean",
+                        "Squash",
+                        "Sugarcane",
+                        "Sunflower",
+                        "Tomato",
+                        "Vegetables",
+                        "Wheat",
+                        "Yam or Amadumbe"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "item-crop-cultivated",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Coverage by Farming Classes per District",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/farming/csv?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Blues",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "activeStyle": "regular",
+              "columns": [
+                {
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "District",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Total Area (Ha)",
+                  "name": "total_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Scarce Farming (Ha)",
+                  "name": "scarce",
+                  "type": "string"
+                },
+                {
+                  "title": "Regular Farming (Ha)",
+                  "name": "regular",
+                  "type": "string"
+                },
+                {
+                  "title": "Irrigated (Ha)",
+                  "name": "irrigated",
+                  "type": "string"
+                },
+                {
+                  "title": "Uncultivated (Ha)",
+                  "name": "uncultivated",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "regular"
+              }
+            },
+            {
+              "id": "item-stats-strata",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Strata Coverage per District",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Reds",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "rgba(230, 230, 77, 0.8)"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "District",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Stratum",
+                  "name": "stratum",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Farming Class",
+                  "name": "fcname",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Strata Area (Ha)",
+                  "name": "strata_area",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "strata_area"
+              },
+              "dimensions": { "fcname": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Farming Classes",
+                  "dimensions": [
+                    {
+                      "name": "fcname",
+                      "title": "Farming Class",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": ["Regular", "Scarce", "Irrigated"]
+                    }
                   ]
                 }
               ]
             }
           ]
+        },
+        {
+          "type": "group",
+          "id": "item-statistics-province",
+          "name": "Province Statistics",
+          "description": "Statistical analysis of crop data by province. Coverage of crops, cultivated vs uncultivated land, and strata for Gaza, Manica and Zambezia provinces.",
+          "members": []
         }
       ]
     },
@@ -382,6 +537,7 @@
           "type": "wms",
           "name": "Districts",
           "layers": "mapfra:mvw_districts",
+          "keepOnTop": false,
           "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "isOpenInWorkbench": false,
           "hideLegendInWorkbench": true,
@@ -424,5 +580,5 @@
     "defaultBaseMapId": "basemap-openstreetmap",
     "previewBaseMapId": "basemap-openstreetmap"
   },
-  "workbench": ["item-statistics", "item-districts", "item-strata"]
+  "workbench": ["item-crop-percentages", "item-stats-strata"]
 }

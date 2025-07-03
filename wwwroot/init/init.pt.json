@@ -9,118 +9,253 @@
     {
       "type": "group",
       "id": "item-statistics",
-      "name": "Estatísticas Plantações",
-      "description": "Estatísticas Plantações",
+      "name": "Estatísticas Culturações",
+      "isOpen": true,
+      "description": "Estatísticas Culturações",
       "members": [
         {
-          "id": "item-crop-percentages",
-          "type": "csv",
-          "name": "Porcentagem de Plantações",
-          "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=po",
-          "isOpenInWorkbench": true,
-          "hideLegendInWorkbench": false,
-          "defaultStyle": {
-            "color": {
-              "nullColor": "rgba(255,255,255,0.1)",
-              "colorPalette": "Greens"
-            }
-          },
-          "defaultColumn": {
-            "name": "percentage"
-          },
-          "columns": [
+          "type": "group",
+          "id": "item-statistics-district",
+          "name": "Distritos",
+          "members": [
             {
-              "name": "prov_name",
-              "type": "hidden"
-            },
-            {
-              "name": "dist_name",
-              "type": "hidden"
-            },
-            {
-              "name": "crop_po",
-              "type": "hidden"
-            },
-            {
-              "title": "Percentagem",
-              "name": "percentage",
-              "type": "number"
-            },
-            {
-              "title": "Área Distrito",
-              "name": "district_area",
-              "type": "number"
-            },
-            {
-              "title": "Plantações Área",
-              "name": "crop_area",
-              "type": "number"
-            }
-          ],
-          "dimensions": { "Crops": "Milho" },
-          "availableDimensions": [
-            {
-              "layerName": "Porcentagem de Plantações",
-              "dimensions": [
+              "id": "item-crop-percentages",
+              "type": "csv",
+              "name": "Porcentagem de Culturações",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=po",
+              "isOpenInWorkbench": true,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(255,255,255,0.1)",
+                  "colorPalette": "Greens"
+                }
+              },
+              "defaultColumn": {
+                "name": "percentage"
+              },
+              "columns": [
                 {
-                  "name": "Crops",
-                  "default": "Milho",
-                  "multipleValues": false,
-                  "values": [
-                    "Abóbora",
-                    "Alface",
-                    "Algodāo",
-                    "Alho",
-                    "Amendoim Grande",
-                    "Amendoim Pequeno",
-                    "Arroz",
-                    "Árvore",
-                    "Batata Doce de Polpa Alaranjada",
-                    "Batata Doce de Polpa Nāo Alaranjada",
-                    "Batata Reno",
-                    "Beringela",
-                    "Cajueiros",
-                    "Cana de Açucar",
-                    "Cebola",
-                    "Chá Folha",
-                    "Citrinos",
-                    "Coqueiros",
-                    "Feijāo Bóer",
-                    "Feijāo Jugo",
-                    "Feijāo Manteiga",
-                    "Feijāo Nhemba",
-                    "Feijāo Oloko",
-                    "Feijāo Verde",
-                    "Feijões",
-                    "Gengibre",
-                    "Gergelim",
-                    "Girassol",
-                    "Horticolas",
-                    "Inhame ou Madumbi",
-                    "Macadāmia",
-                    "Mafureiras",
-                    "Mandioca",
-                    "Mangueiras",
-                    "Mapira",
-                    "Mexoeira",
-                    "Milho",
-                    "Outra Horticola",
-                    "Outros Feijōes",
-                    "Paprica",
-                    "Pimenta",
-                    "Piri-Piri",
-                    "Quiabo",
-                    "Repolho",
-                    "Sisal Folha",
-                    "Soja",
-                    "Tabaco",
-                    "Tomate",
-                    "Trigo"
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Cultura",
+                  "name": "crop_po",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Percentagem",
+                  "name": "percentage",
+                  "type": "number"
+                },
+                {
+                  "title": "Área Distrito",
+                  "name": "district_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Culturações Área",
+                  "name": "crop_area",
+                  "type": "number"
+                }
+              ],
+              "dimensions": { "Crops": "Milho" },
+              "availableDimensions": [
+                {
+                  "layerName": "Porcentagem de Culturações",
+                  "dimensions": [
+                    {
+                      "name": "Crops",
+                      "default": "Milho",
+                      "multipleValues": false,
+                      "values": [
+                        "Feijões",
+                        "Repolho",
+                        "Mandioca",
+                        "Milho",
+                        "Algodāo",
+                        "Beringela",
+                        "Alho",
+                        "Gengibre",
+                        "Batata Reno",
+                        "Amendoim Grande",
+                        "Chá Folha",
+                        "Alface",
+                        "Mexoeira",
+                        "Batata Doce de Polpa Nāo Alaranjada",
+                        "Quiabo",
+                        "Cebola",
+                        "Batata Doce de Polpa Alaranjada",
+                        "Outra Horticola",
+                        "Paprica",
+                        "Pimenta",
+                        "Piri-Piri",
+                        "Arroz",
+                        "Gergelim",
+                        "Sisal Folha",
+                        "Amendoim Pequeno",
+                        "Mapira",
+                        "Soja",
+                        "Abóbora",
+                        "Cana de Açucar",
+                        "Girassol",
+                        "Tomate",
+                        "Horticolas",
+                        "Trigo",
+                        "Inhame ou Madumbi"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "item-crop-cultivated",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura por classes culturações por distrito",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/farming/csv?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Blues",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "activeStyle": "regular",
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área total (Ha)",
+                  "name": "total_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Agricultura Escassa (Ha)",
+                  "name": "scarce",
+                  "type": "string"
+                },
+                {
+                  "title": "Regular (Ha)",
+                  "name": "regular",
+                  "type": "string"
+                },
+                {
+                  "title": "Irrigada (Ha)",
+                  "name": "irrigated",
+                  "type": "string"
+                },
+                {
+                  "title": "Não cultivado (Ha)",
+                  "name": "uncultivated",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "regular"
+              }
+            },
+            {
+              "id": "item-stats-strata",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura de estratos por distrito",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Reds",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "rgba(230, 230, 77, 0.8)"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Estrato",
+                  "name": "stratum",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Aula de Agricultura",
+                  "name": "fcname",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área de estratos (Ha)",
+                  "name": "strata_area",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "strata_area"
+              },
+              "dimensions": { "fcname": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Aula de Agricultura",
+                  "dimensions": [
+                    {
+                      "name": "fcname",
+                      "title": "Aula de Agricultura",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": ["Regular", "Escassa", "Irrigada"]
+                    }
                   ]
                 }
               ]
             }
           ]
+        },
+        {
+          "type": "group",
+          "id": "item-statistics-province",
+          "name": "Provincias",
+          "description": "Análise estatística de dados de culturas por província. Cobertura de culturas, terras cultivadas vs. não cultivadas e estratos para as províncias de Gaza, Manica e Zambézia.",
+          "members": []
         }
       ]
     },
@@ -369,7 +504,7 @@
             "srs": "EPSG:3857"
           },
           "featureInfoTemplate": {
-            "template": "<table><tr><td>Provincia</b></td><td>{{province}}</td></tr><tr><td>Distrito</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivado vs. não cultivado' open='true'><chart title='Cultivado vs. não cultivado' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv?lang=po' x-column='Aula de agricultura'  y-columns='Área (ha)' column-units='Ha'></chart></collapsible><collapsible title='Plantações'><csvtable title='Não cultivado' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv?lang=po' y-columns='Nome das cultura,Área (ha)' column-titles='Nome das cultura,Área (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv?lang=po' y-columns='Strata,Área (ha)' column-titles='Strata,Área (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
+            "template": "<table><tr><td>Provincia</b></td><td>{{province}}</td></tr><tr><td>Distrito</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivado vs. não cultivado' open='true'><chart title='Cultivado vs. não cultivado' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv?lang=po' x-column='Aula de agricultura'  y-columns='Área (ha)' column-units='Ha'></chart></collapsible><collapsible title='Culturações'><csvtable title='Não cultivado' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv?lang=po' y-columns='Nome das cultura,Área (ha)' column-titles='Nome das cultura,Área (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv?lang=po' y-columns='Strata,Área (ha)' column-titles='Strata,Área (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
           },
           "customProperties": {
             "charts": [
@@ -404,5 +539,5 @@
     "defaultBaseMapId": "basemap-openstreetmap",
     "previewBaseMapId": "basemap-openstreetmap"
   },
-  "workbench": ["item-statistics", "item-districtos", "item-strata"]
+  "workbench": ["item-crop-percentages", "item-stats-strata"]
 }
