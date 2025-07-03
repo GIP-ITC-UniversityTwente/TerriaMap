@@ -280,26 +280,6 @@
       ]
     },
     {
-      "id": "item-crop-provinces",
-      "type": "csv",
-      "name": "Crop Area by Province",
-      "url": "/init/poa_code.csv",
-      "isOpenInWorkbench": true,
-      "hideLegendInWorkbench": true,
-      "columns": [
-        {
-          "title": "Province",
-          "name": "province",
-          "type": "string"
-        },
-        {
-          "title": "Percentage",
-          "name": "area",
-          "type": "number"
-        }
-      ]
-    },
-    {
       "id": "item-landcover",
       "type": "cog",
       "name": "Land Cover",
