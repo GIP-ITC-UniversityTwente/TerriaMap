@@ -275,7 +275,242 @@
           "id": "item-statistics-province",
           "name": "Province Statistics",
           "description": "Statistical analysis of crop data by province. Coverage of crops, cultivated vs uncultivated land, and strata for Gaza, Manica and Zambezia provinces.",
-          "members": []
+          "members": [
+            {
+              "id": "item-crop-percentages-province",
+              "type": "csv",
+              "name": "Crop Coverage (Area/Percentage) per Province",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
+              "isOpenInWorkbench": true,
+              "hideLegendInWorkbench": false,
+              "keepOnTop": true,
+              "activeStyle": "percentage",
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Greens",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Crop",
+                  "name": "crop_en",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Percentage",
+                  "name": "percentage",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 2
+                  }
+                },
+                {
+                  "title": "Area (Ha)",
+                  "name": "province_area",
+                  "type": "hidden",
+                  "format": {
+                    "maximumFractionDigits": 3
+                  }
+                },
+                {
+                  "title": "Crop Area (Ha)",
+                  "name": "crop_area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 3
+                  }
+                }
+              ],
+              "defaultColumn": {
+                "name": "percentage"
+              },
+              "dimensions": { "Crops": "Corn" },
+              "availableDimensions": [
+                {
+                  "layerName": "Crop Percentages",
+                  "dimensions": [
+                    {
+                      "name": "Crops",
+                      "default": "Corn",
+                      "multipleValues": false,
+                      "values": [
+                        "Beans",
+                        "Cabbage",
+                        "Cassava",
+                        "Corn",
+                        "Cotton",
+                        "Eggplant",
+                        "Garlic",
+                        "Ginger",
+                        "Kidney Potato",
+                        "Large Peanut",
+                        "Leaf Tea",
+                        "Lettuce",
+                        "Millet",
+                        "Non-Orange-Fleshed Sweet Potato",
+                        "Okra",
+                        "Onion",
+                        "Orange-Fleshed Sweet Potato",
+                        "Other Vegetable",
+                        "Paprika",
+                        "Pepper",
+                        "Piri-Piri",
+                        "Rice",
+                        "Sesame",
+                        "Sisal",
+                        "Small Peanut",
+                        "Sorghum",
+                        "Soybean",
+                        "Squash",
+                        "Sugarcane",
+                        "Sunflower",
+                        "Tomato",
+                        "Vegetables",
+                        "Wheat",
+                        "Yam or Amadumbe"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "item-crop-cultivated-province",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Coverage by Farming Classes per Province",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/farming/csv?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Blues",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "activeStyle": "regular",
+              "columns": [
+                {
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Total Area (Ha)",
+                  "name": "total_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Scarce Farming (Ha)",
+                  "name": "scarce",
+                  "type": "string"
+                },
+                {
+                  "title": "Regular Farming (Ha)",
+                  "name": "regular",
+                  "type": "string"
+                },
+                {
+                  "title": "Irrigated (Ha)",
+                  "name": "irrigated",
+                  "type": "string"
+                },
+                {
+                  "title": "Uncultivated (Ha)",
+                  "name": "uncultivated",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "regular"
+              }
+            },
+            {
+              "id": "item-stats-strata-province",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Strata Coverage per Province",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/strata?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "No data available",
+                  "colorPalette": "Reds",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "rgba(230, 230, 77, 0.8)"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Province",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Stratum",
+                  "name": "stratum",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Farming Class",
+                  "name": "fcname",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Strata Area (Ha)",
+                  "name": "strata_area",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "strata_area"
+              },
+              "dimensions": { "fcname": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Farming Classes",
+                  "dimensions": [
+                    {
+                      "name": "fcname",
+                      "title": "Farming Class",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": ["Regular", "Scarce", "Irrigated"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     },
