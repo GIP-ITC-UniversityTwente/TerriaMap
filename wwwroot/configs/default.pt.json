@@ -95,7 +95,7 @@
         "url": "https://mapfra.itc.utwente.nl/about"
       }
     ],
-    "leafletAttributionPrefix": "<div class=\"partners\" style=\"position: absolute; bottom:80px; padding: 2px 2px 2px 0px; background: rgba(0,0,0, 0.1); border-radius: 0px 5px 5px 0px;  \"><style> .partners img {  height: 60px !important;}</style><div style=\"background: white\"><img src=\"https://mapfra.itc.utwente.nl/static/images/mafra-logo.png\" alt=\"Mafra Logo\" /><img src=\"https://mapfra.itc.utwente.nl/static/images/image.png\" alt=\"Partners Logo\" /></div></div>",
+    "leafletAttributionPrefix": "<div class=\"partners\" style=\"position: absolute; bottom:30px; padding: 2px 2px 2px 0px; background: rgba(0,0,0, 0.1); border-radius: 0px 5px 5px 0px;  \"><style> .partners img {  height: 60px !important;}</style><div style=\"background: white\"><img src=\"https://mapfra.itc.utwente.nl/static/images/mafra-logo.png\" alt=\"Mafra Logo\" /><img src=\"https://mapfra.itc.utwente.nl/static/images/image.png\" alt=\"Partners Logo\" /></div></div>",
     "hideTerriaLogo": true,
     "aboutButtonHrefUrl": "https://mapfra.itc.utwente.nl/about",
     "shareUrl": null,
