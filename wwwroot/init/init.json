@@ -280,7 +280,7 @@
               "id": "item-crop-percentages-province",
               "type": "csv",
               "name": "Crop Coverage (Area/Percentage) per Province",
-              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/crop/percentage?lang=en",
               "isOpenInWorkbench": true,
               "hideLegendInWorkbench": false,
               "keepOnTop": true,
