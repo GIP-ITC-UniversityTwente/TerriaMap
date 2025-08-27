@@ -1,0 +1,759 @@
+{
+  "homeCamera": {
+    "north": -10.4712,
+    "east": 40.8393,
+    "south": -26.8687,
+    "west": 30.2174
+  },
+  "catalog": [
+    {
+      "type": "group",
+      "id": "item-statistics",
+      "name": "Estatísticas Culturações",
+      "isOpen": true,
+      "description": "Estatísticas Culturações",
+      "members": [
+        {
+          "type": "group",
+          "id": "item-statistics-district",
+          "name": "Distritos",
+          "members": [
+            {
+              "id": "item-crop-percentages",
+              "type": "csv",
+              "name": "Porcentagem de Culturações",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=po",
+              "isOpenInWorkbench": true,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(255,255,255,0.1)",
+                  "colorPalette": "Greens"
+                }
+              },
+              "defaultColumn": {
+                "name": "percentage"
+              },
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Cultura",
+                  "name": "crop_po",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Percentagem",
+                  "name": "percentage",
+                  "type": "number"
+                },
+                {
+                  "title": "Área Distrito",
+                  "name": "district_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Culturações Área",
+                  "name": "crop_area",
+                  "type": "number"
+                }
+              ],
+              "dimensions": { "Crops": "Milho" },
+              "availableDimensions": [
+                {
+                  "layerName": "Porcentagem de Culturações",
+                  "dimensions": [
+                    {
+                      "name": "Crops",
+                      "default": "Milho",
+                      "multipleValues": false,
+                      "values": [
+                        "Feijões",
+                        "Repolho",
+                        "Mandioca",
+                        "Milho",
+                        "Algodāo",
+                        "Beringela",
+                        "Alho",
+                        "Gengibre",
+                        "Batata Reno",
+                        "Amendoim Grande",
+                        "Chá Folha",
+                        "Alface",
+                        "Mexoeira",
+                        "Batata Doce de Polpa Nāo Alaranjada",
+                        "Quiabo",
+                        "Cebola",
+                        "Batata Doce de Polpa Alaranjada",
+                        "Outra Horticola",
+                        "Paprica",
+                        "Pimenta",
+                        "Piri-Piri",
+                        "Arroz",
+                        "Gergelim",
+                        "Sisal Folha",
+                        "Amendoim Pequeno",
+                        "Mapira",
+                        "Soja",
+                        "Abóbora",
+                        "Cana de Açucar",
+                        "Girassol",
+                        "Tomate",
+                        "Horticolas",
+                        "Trigo",
+                        "Inhame ou Madumbi"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "item-crop-cultivated",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura por classes culturações por distrito",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/farming/csv?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Blues",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "activeStyle": "regular",
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área total (Ha)",
+                  "name": "total_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Agricultura Escassa (Ha)",
+                  "name": "scarce",
+                  "type": "string"
+                },
+                {
+                  "title": "Regular (Ha)",
+                  "name": "regular",
+                  "type": "string"
+                },
+                {
+                  "title": "Irrigada (Ha)",
+                  "name": "irrigated",
+                  "type": "string"
+                },
+                {
+                  "title": "Não cultivado (Ha)",
+                  "name": "uncultivated",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "regular"
+              }
+            },
+            {
+              "id": "item-stats-strata",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura de estratos por distrito",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Reds",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "rgba(230, 230, 77, 0.8)"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Distrito",
+                  "name": "dist_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Estrato",
+                  "name": "stratum",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Aula de Agricultura",
+                  "name": "fcname",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área de estratos (Ha)",
+                  "name": "strata_area",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "strata_area"
+              },
+              "dimensions": { "fcname": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Aula de Agricultura",
+                  "dimensions": [
+                    {
+                      "name": "fcname",
+                      "title": "Aula de Agricultura",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": ["Regular", "Escassa", "Irrigada"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "id": "item-statistics-province",
+          "name": "Provincias",
+          "description": "Análise estatística de dados de culturas por província. Cobertura de culturas, terras cultivadas vs. não cultivadas e estratos para as províncias de Gaza, Manica e Zambézia.",
+          "members": [
+            {
+              "id": "item-crop-percentages-province",
+              "type": "csv",
+              "name": "Porcentagem de Culturações",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/crop/percentage?lang=po",
+              "isOpenInWorkbench": true,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(255,255,255,0.1)",
+                  "colorPalette": "Greens"
+                }
+              },
+              "defaultColumn": {
+                "name": "percentage"
+              },
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Cultura",
+                  "name": "crop_po",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Percentagem",
+                  "name": "percentage",
+                  "type": "number"
+                },
+                {
+                  "title": "Área Provincia",
+                  "name": "province_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Culturações Área",
+                  "name": "crop_area",
+                  "type": "number"
+                }
+              ],
+              "dimensions": { "Crops": "Milho" },
+              "availableDimensions": [
+                {
+                  "layerName": "Porcentagem de Culturações",
+                  "dimensions": [
+                    {
+                      "name": "Crops",
+                      "default": "Milho",
+                      "multipleValues": false,
+                      "values": [
+                        "Feijões",
+                        "Repolho",
+                        "Mandioca",
+                        "Milho",
+                        "Algodāo",
+                        "Beringela",
+                        "Alho",
+                        "Gengibre",
+                        "Batata Reno",
+                        "Amendoim Grande",
+                        "Chá Folha",
+                        "Alface",
+                        "Mexoeira",
+                        "Batata Doce de Polpa Nāo Alaranjada",
+                        "Quiabo",
+                        "Cebola",
+                        "Batata Doce de Polpa Alaranjada",
+                        "Outra Horticola",
+                        "Paprica",
+                        "Pimenta",
+                        "Piri-Piri",
+                        "Arroz",
+                        "Gergelim",
+                        "Sisal Folha",
+                        "Amendoim Pequeno",
+                        "Mapira",
+                        "Soja",
+                        "Abóbora",
+                        "Cana de Açucar",
+                        "Girassol",
+                        "Tomate",
+                        "Horticolas",
+                        "Trigo",
+                        "Inhame ou Madumbi"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "item-crop-cultivated-province",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura por classes culturações por provincia",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/farming/csv?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": false,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Blues",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "#ff3400"
+                  }
+                }
+              },
+              "activeStyle": "regular",
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área total (Ha)",
+                  "name": "total_area",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Agricultura Escassa (Ha)",
+                  "name": "scarce",
+                  "type": "string"
+                },
+                {
+                  "title": "Regular (Ha)",
+                  "name": "regular",
+                  "type": "string"
+                },
+                {
+                  "title": "Irrigada (Ha)",
+                  "name": "irrigated",
+                  "type": "string"
+                },
+                {
+                  "title": "Não cultivado (Ha)",
+                  "name": "uncultivated",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "regular"
+              }
+            },
+            {
+              "id": "item-stats-strata-province",
+              "type": "csv",
+              "keepOnTop": true,
+              "name": "Cobertura de estratos por provincia",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/strata?lang=en",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "defaultStyle": {
+                "color": {
+                  "nullColor": "rgba(0,255,255,0.1)",
+                  "nullLabel": "Não há dados disponíveis",
+                  "colorPalette": "Reds",
+                  "legendTicks": 5
+                },
+                "outline": {
+                  "null": {
+                    "width": 2,
+                    "color": "rgba(230, 230, 77, 0.8)"
+                  }
+                }
+              },
+              "columns": [
+                {
+                  "title": "Provincia",
+                  "name": "prov_name",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Estrato",
+                  "name": "stratum",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Aula de Agricultura",
+                  "name": "fcname",
+                  "type": "hidden"
+                },
+                {
+                  "title": "Área de estratos (Ha)",
+                  "name": "strata_area",
+                  "type": "string"
+                }
+              ],
+              "defaultColumn": {
+                "name": "strata_area"
+              },
+              "dimensions": { "fcname": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Aula de Agricultura",
+                  "dimensions": [
+                    {
+                      "name": "fcname",
+                      "title": "Aula de Agricultura",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": ["Regular", "Escassa", "Irrigada"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "item-landcover",
+      "type": "cog",
+      "name": "Cobertura da terra",
+      "url": "https://cog-mafra.s3.amazonaws.com/raster/landcover.tif",
+      "isOpenInWorkbench": false,
+      "renderOptions": {
+        "nodata": 0,
+        "resampleMethod": "nearest",
+        "single": {
+          "colors": [
+            [0, "rgba(255, 255, 255, 0)"],
+            [1, "#df73ff"],
+            [3, "#ffff00"],
+            [4, "#ff0000"],
+            [5, "#a8a800"],
+            [6, "#00734c"],
+            [7, "#732600"],
+            [8, "#98e600"],
+            [9, "#00ffc5"],
+            [10, "#3399FF"]
+          ],
+          "type": "discrete",
+          "useRealValue": true
+        }
+      },
+      "featureInfoTemplate": {
+        "name": "Cobertura da terra",
+        "template": "Cobertura da terra: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+        "partials": {
+          "0": "Sem dados",
+          "1": "Milho",
+          "3": "Campos mistos",
+          "4": "Áreas construídas",
+          "5": "Arbusto",
+          "6": "Árvores",
+          "7": "Terra nua",
+          "8": "Grama",
+          "9": "Arroz",
+          "10": "Água"
+        }
+      },
+      "legends": [
+        {
+          "items": [
+            {
+              "title": "Milho",
+              "color": "#df73ff",
+              "outlineColor": "#7d73b2",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Campos mistos",
+              "color": "#ffff00",
+              "outlineColor": "#186118",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Áreas construídas",
+              "color": "#ff0000",
+              "outlineColor": "#A0C9A3",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Arbusto",
+              "color": "#a8a800",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Árvores",
+              "color": "#00734c",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Terra nua",
+              "color": "#732600",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Grama",
+              "color": "#98e600",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Arroz",
+              "color": "rgba(230, 230, 77, 0.8)",
+              "outlineColor": "#00ffc5",
+              "addSpacingAbove": true
+            },
+            {
+              "title": "Água",
+              "color": "#3399FF",
+              "outlineColor": "#995077",
+              "addSpacingAbove": true
+            }
+          ]
+        }
+      ],
+      "description": "<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+    },
+    {
+      "id": "item-ndvi",
+      "type": "wms",
+      "name": "Perfis NDVI",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+      "layers": "mapfra:ndvi",
+      "hideLegendInWorkbench": true,
+      "opacity": 1,
+      "show": true,
+      "parameters": {
+        "srs": "EPSG:3857",
+        "version": "1.1.1"
+      },
+      "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
+      "featureInfoTemplate": {
+        "name": "Aglomerado NDVI {{GRAY_INDEX}}",
+        "template": "<p>Perfis NDVI.</p><chart title='Perfis NDVI' chart-type='line' src='https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile/{{GRAY_INDEX}}/csv' x-column='Dekad' y-columns='10-th Percentile,50-th Percentile,90-th Percentile' column-units='Dekad'></chart>"
+      },
+      "customProperties": {
+        "charts": [
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#bae4b3"]
+            }
+          },
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#006d2c"]
+            }
+          },
+          {
+            "type": "line",
+            "xAxis": {
+              "colors": ["#bae4b3"]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "item-plots",
+      "type": "wms",
+      "name": "Áreas de Amostragem (SA)",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+      "layers": "mapfra:plots",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857",
+        "version": "1.1.1"
+      },
+      "legends": [
+        {
+          "title": "Segmentos de plotagem",
+          "imageScaling": 0.6,
+          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:segments&LEGEND_OPTIONS=fontName%3ACourier%3BfontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3Bdpi%3A182&transparent=false"
+        },
+        {
+          "title": "Parcelas de Amostragem",
+          "imageScaling": 0.5,
+          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:sample_plots500&LEGEND_OPTIONS=fontName%3ACourier%3fontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3BfontColor%3A0xffffff%3Bdpi%3A182&transparent=true"
+        }
+      ]
+    },
+    {
+      "id": "item-segmentscores",
+      "type": "wms",
+      "name": "Pontuações de culturas segmentadas",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:segment_crop_scores",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      }
+    },
+    {
+      "id": "item-landforms",
+      "type": "wms",
+      "name": "Formas de relevo",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_landforms",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Formas de relevo - {{landform}}",
+        "template": "<table><tr><td><b>Tipo de relevo</b></td><td>{{landform}}</td><tr><td><b>Provincia</b></td><td>{{province}}</td></tr></table>"
+      }
+    },
+    {
+      "id": "item-farmingclasses",
+      "type": "wms",
+      "name": "Aulas de agricultura",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_farmingclasses",
+      "opacity": 1,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Farming Class - {{fcname}}",
+        "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+      }
+    },
+    {
+      "id": "item-strata",
+      "type": "wms",
+      "name": "Strata",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "layers": "mapfra:mvw_strata",
+      "opacity": 1,
+      "show": true,
+      "parameters": {
+        "srs": "EPSG:3857"
+      },
+      "featureInfoTemplate": {
+        "name": "Strata - {{stratum}}",
+        "template": "<table><tr><td><b>Stratum</b></td><td>{{stratum}}</td></tr><tr><td><b>Landform</b></td><td>{{landform}}</td></tr><tr><td><b>Farming class</b></td><td>{{fcname}}</td></tr><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+      },
+      "isOpenInWorkbench": false
+    },
+    {
+      "type": "group",
+      "id": "item-admins",
+      "name": "Áreas administrativas",
+      "description": "Áreas administrativas de Moçambique",
+      "members": [
+        {
+          "id": "item-districtos",
+          "type": "wms",
+          "name": "Distritos",
+          "layers": "mapfra:mvw_districts",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "isOpenInWorkbench": true,
+          "hideLegendInWorkbench": true,
+          "parameters": {
+            "srs": "EPSG:3857"
+          },
+          "featureInfoTemplate": {
+            "template": "<table><tr><td>Provincia</b></td><td>{{province}}</td></tr><tr><td>Distrito</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivado vs. não cultivado' open='true'><chart title='Cultivado vs. não cultivado' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv?lang=po' x-column='Aula de agricultura'  y-columns='Área (ha)' column-units='Ha'></chart></collapsible><collapsible title='Culturações'><csvtable title='Não cultivado' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv?lang=po' y-columns='Nome das cultura,Área (ha)' column-titles='Nome das cultura,Área (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv?lang=po' y-columns='Strata,Área (ha)' column-titles='Strata,Área (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
+          },
+          "customProperties": {
+            "charts": [
+              {
+                "type": "bar",
+                "xAxis": {
+                  "colors": ["#a0c9a3", "#186118", "#7d73b2", "#e6e64d"]
+                }
+              }
+            ]
+          },
+          "dimensions": { "Province": "Gaza" },
+          "availableDimensions": [
+            {
+              "layerName": "mapfra:mvw_districts",
+              "dimensions": [
+                {
+                  "name": "Province",
+                  "default": "Gaza",
+                  "multipleValues": false,
+                  "values": ["Gaza", "Manica", "Zambezia"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "viewerMode": "2d",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-openstreetmap",
+    "previewBaseMapId": "basemap-openstreetmap"
+  },
+  "workbench": ["item-crop-percentages", "item-stats-strata"]
+}

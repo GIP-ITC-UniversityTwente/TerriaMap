@@ -1,5 +1,14 @@
+"use strict";
+
+const terriaOptions = {
+  baseUrl: "build/TerriaJS"
+};
+
+let _configUrl;
+
 import ConsoleAnalytics from "terriajs/lib/Core/ConsoleAnalytics";
 import GoogleAnalytics from "terriajs/lib/Core/GoogleAnalytics";
+import loadJson5 from "terriajs/lib/Core/loadJson5";
 import registerCatalogMembers from "terriajs/lib/Models/Catalog/registerCatalogMembers";
 import registerSearchProviders from "terriajs/lib/Models/SearchProviders/registerSearchProviders";
 import ShareDataService from "terriajs/lib/Models/ShareDataService";
@@ -10,11 +19,13 @@ import updateApplicationOnHashChange from "terriajs/lib/ViewModels/updateApplica
 import updateApplicationOnMessageFromParentWindow from "terriajs/lib/ViewModels/updateApplicationOnMessageFromParentWindow";
 import loadPlugins from "./lib/Core/loadPlugins";
 import showGlobalDisclaimer from "./lib/Views/showGlobalDisclaimer";
+import defined from "terriajs-cesium/Source/Core/defined";
 import plugins from "./plugins";
+import config from "./config.json";
 
-const terriaOptions = {
-  baseUrl: "build/TerriaJS"
-};
+// keep track of the available languages for the currnet subdomain
+let _availableLanguages = ["en"];
+let _siteDefaultLanguage = "en";
 
 // we check exact match for development to reduce chances that production flag isn't set on builds(?)
 if (process.env.NODE_ENV === "development") {
@@ -25,6 +36,8 @@ if (process.env.NODE_ENV === "development") {
 
 // Construct the TerriaJS application, arrange to show errors to the user, and start it up.
 const terria = new Terria(terriaOptions);
+
+setConfigForSubdomain();
 
 // Create the ViewState before terria.start so that errors have somewhere to go.
 const viewState = new ViewState({
@@ -48,10 +61,32 @@ if (process.env.NODE_ENV === "development") {
   window.viewState = viewState;
 }
 
+// If we're running in dev mode, disable the built style sheet as we'll be using the webpack style loader.
+// Note that if the first stylesheet stops being nationalmap.css then this will have to change.
+if (process.env.NODE_ENV !== "production" && module.hot) {
+  document.styleSheets[0].disabled = true;
+}
+
+// this is to set language and reload page before bootstraping the app is completed, resulting  in a quicker page refresh without the user noticing it
+const langFromUrl = new URLSearchParams(location.search).get("lang");
+if (!langFromUrl) {
+  const userLang = localStorage.getItem("i18nextLng");
+  const params = new URLSearchParams(location.search);
+  // check if user default browser language is supported by the app if not fallback to site default language if not fallback to english
+  const lang = isSupportedLanguageOrDefault(userLang);
+  params.set("lang", lang);
+  window.location.search = params.toString();
+} else if (!isSupported(langFromUrl)) {
+  i18n.changeLanguage("en");
+  const params = new URLSearchParams(location.search);
+  params.set("lang", "en");
+  window.location.search = params.toString();
+}
+
 export default terria
   .start({
     applicationUrl: window.location,
-    configUrl: "config.json",
+    configUrl: _configUrl,
     shareDataService: new ShareDataService({
       terria: terria
     }),
@@ -84,7 +119,10 @@ export default terria
       updateApplicationOnMessageFromParentWindow(terria, window);
 
       // Show a modal disclaimer before user can do anything else.
-      if (terria.configParameters.globalDisclaimer) {
+      if (
+        defined(terria.configParameters.globalDisclaimer) &&
+        terria.configParameters.globalDisclaimer.show
+      ) {
         showGlobalDisclaimer(viewState);
       }
 
@@ -104,3 +142,60 @@ export default terria
   .then(() => {
     return { terria, viewState };
   });
+
+function isSupportedLanguageOrDefault(lang) {
+  const fallbackLanguage = "en";
+  const isSiteDefaultLangSupported = isSupported(_siteDefaultLanguage);
+  if (isSupported(lang)) {
+    return lang;
+  } else if (isSiteDefaultLangSupported) {
+    return _siteDefaultLanguage;
+  } else {
+    return fallbackLanguage;
+  }
+}
+
+function isSupported(lang) {
+  return _availableLanguages.includes(lang);
+}
+
+function setConfigForSubdomain() {
+  _configUrl = getConfigUrl();
+  loadJson5(_configUrl).then(function (config) {
+    document.title = config.parameters.appName;
+  });
+}
+
+function getConfigUrl() {
+  const url = new URL(window.location.href);
+  const isProd = config.main.prod.includes(url.hostname);
+  const sites = isProd ? config.sites.apps : config.sites.review;
+  const paths = url.pathname.split("/").slice(1);
+  const urlPath =
+    paths.length !== 0
+      ? paths.filter(Boolean).join("/") // This is to allow second level context paths, but first filter empty strings
+      : "default";
+  const _site = sites.hasOwnProperty(urlPath) ? urlPath : "default";
+  const siteConfig = sites[_site];
+  _availableLanguages = config.languages[_site].supportedLangs;
+  _siteDefaultLanguage = config.languages[_site].defaultLang;
+  const lang = getLanguage();
+  const site_with_translation = loadConfig(lang, siteConfig);
+  return site_with_translation;
+}
+
+function getLanguage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const lang = urlParams.get("lang");
+  return lang;
+}
+
+function loadConfig(lang, defaultConfig) {
+  const fallbackLang = "en";
+  const configUrl =
+    lang === fallbackLang || !lang
+      ? defaultConfig
+      : defaultConfig.replace(".json", `.${lang}.json`);
+
+  return configUrl;
+}
