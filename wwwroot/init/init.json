@@ -207,7 +207,7 @@
               "name": "Strata Coverage per District",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
               "isOpenInWorkbench": false,
-              "hideLegendInWorkbench": true,
+              "hideLegendInWorkbench": false,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
@@ -252,7 +252,7 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular" },
+              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -263,6 +263,67 @@
                       "default": "Regular",
                       "multipleValues": false,
                       "values": ["Regular", "Scarce", "Irrigated"]
+                    },
+                    {
+                      "name": "stratum",
+                      "title": "Stratum",
+                      "default": "Alluvial",
+                      "multipleValues": true,
+                      "values": [
+                        "Alluvial",
+                        "Broad Valley",
+                        "Central Pedi",
+                        "Common Pedi",
+                        "6 Early Alluvial",
+                        "5 Early Alluvial",
+                        "9 Early Alluvial",
+                        "8 Early Alluvial",
+                        "6 Early Coastal Pedi",
+                        "Early Hill-Pedi",
+                        "6 Early Inland Pedi",
+                        "4 Early Inland Pedi",
+                        "Early Montane",
+                        "10 Early Pedi",
+                        "7 Early Pedi",
+                        "Early Pedi",
+                        "24-33 Flood",
+                        "23 Flood",
+                        "32 Flood",
+                        "12 Flood",
+                        "9 Flood",
+                        "17 Flood",
+                        "Flood",
+                        "Gondola & Mossurize Hills",
+                        "Hill-Pedi",
+                        "Inland Alluvial",
+                        "Internal Pedi",
+                        "Irrigated Alluvial",
+                        "Irrigated Flood",
+                        "Irrigated Pedi",
+                        "7 Late Alluvial",
+                        "Late Alluvial",
+                        "Late Hill-Pedi",
+                        "Late Montane",
+                        "11 Late Pedi",
+                        "12 Late Pedi",
+                        "5 Late Pedi",
+                        "8 Late Pedi",
+                        "Late Pedi",
+                        "Narrow Valley",
+                        "Northern & Southern Pedi",
+                        "Northwestern Pedi",
+                        "Scarce Alluvial",
+                        "Scarce Broad Valley",
+                        "Scarce Coastal Pedi",
+                        "Scarce Flood",
+                        "Scarce Hill",
+                        "Scarce Hill-Pedi",
+                        "Scarce Montane",
+                        "Scarce Pedi",
+                        "Scarce Western Pedi",
+                        "Sussundenga Hills",
+                        "Western Alluvial"
+                      ]
                     }
                   ]
                 }
@@ -454,7 +515,7 @@
               "name": "Strata Coverage per Province",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/strata?lang=en",
               "isOpenInWorkbench": false,
-              "hideLegendInWorkbench": true,
+              "hideLegendInWorkbench": false,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
@@ -494,7 +555,7 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular" },
+              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -505,6 +566,67 @@
                       "default": "Regular",
                       "multipleValues": false,
                       "values": ["Regular", "Scarce", "Irrigated"]
+                    },
+                    {
+                      "name": "stratum",
+                      "title": "Stratum",
+                      "default": "Alluvial",
+                      "multipleValues": true,
+                      "values": [
+                        "Alluvial",
+                        "Broad Valley",
+                        "Central Pedi",
+                        "Common Pedi",
+                        "6 Early Alluvial",
+                        "5 Early Alluvial",
+                        "9 Early Alluvial",
+                        "8 Early Alluvial",
+                        "6 Early Coastal Pedi",
+                        "Early Hill-Pedi",
+                        "6 Early Inland Pedi",
+                        "4 Early Inland Pedi",
+                        "Early Montane",
+                        "10 Early Pedi",
+                        "7 Early Pedi",
+                        "Early Pedi",
+                        "24-33 Flood",
+                        "23 Flood",
+                        "32 Flood",
+                        "12 Flood",
+                        "9 Flood",
+                        "17 Flood",
+                        "Flood",
+                        "Gondola & Mossurize Hills",
+                        "Hill-Pedi",
+                        "Inland Alluvial",
+                        "Internal Pedi",
+                        "Irrigated Alluvial",
+                        "Irrigated Flood",
+                        "Irrigated Pedi",
+                        "7 Late Alluvial",
+                        "Late Alluvial",
+                        "Late Hill-Pedi",
+                        "Late Montane",
+                        "11 Late Pedi",
+                        "12 Late Pedi",
+                        "5 Late Pedi",
+                        "8 Late Pedi",
+                        "Late Pedi",
+                        "Narrow Valley",
+                        "Northern & Southern Pedi",
+                        "Northwestern Pedi",
+                        "Scarce Alluvial",
+                        "Scarce Broad Valley",
+                        "Scarce Coastal Pedi",
+                        "Scarce Flood",
+                        "Scarce Hill",
+                        "Scarce Hill-Pedi",
+                        "Scarce Montane",
+                        "Scarce Pedi",
+                        "Scarce Western Pedi",
+                        "Sussundenga Hills",
+                        "Western Alluvial"
+                      ]
                     }
                   ]
                 }
