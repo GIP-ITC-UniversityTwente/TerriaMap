@@ -23,7 +23,7 @@
               "type": "csv",
               "name": "Porcentagem de Culturações",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=po",
-              "isOpenInWorkbench": true,
+              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
               "defaultStyle": {
                 "color": {
@@ -649,6 +649,19 @@
                   ]
                 }
               ]
+            },
+            {
+              "id": "item-province",
+              "type": "wms",
+              "name": "Provincias",
+              "layers": "mapfra:province",
+              "keepOnTop": false,
+              "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "parameters": {
+                "srs": "EPSG:3857"
+              }
             }
           ]
         },
@@ -668,108 +681,277 @@
           }
         },
         {
+          "type": "group",
           "id": "item-landcover",
-          "type": "cog",
           "name": "Cobertura da terra",
-          "url": "https://cog-mafra.s3.amazonaws.com/raster/landcover.tif",
-          "isOpenInWorkbench": false,
-          "renderOptions": {
-            "nodata": 0,
-            "resampleMethod": "nearest",
-            "single": {
-              "colors": [
-                [0, "rgba(255, 255, 255, 0)"],
-                [1, "#df73ff"],
-                [3, "#ffff00"],
-                [4, "#ff0000"],
-                [5, "#a8a800"],
-                [6, "#00734c"],
-                [7, "#732600"],
-                [8, "#98e600"],
-                [9, "#00ffc5"],
-                [10, "#3399FF"]
-              ],
-              "type": "discrete",
-              "useRealValue": true
-            }
-          },
-          "featureInfoTemplate": {
-            "name": "Cobertura da terra",
-            "template": "Cobertura da terra: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
-            "partials": {
-              "0": "Sem dados",
-              "1": "Milho",
-              "3": "Campos mistos",
-              "4": "Áreas construídas",
-              "5": "Arbusto",
-              "6": "Árvores",
-              "7": "Terra nua",
-              "8": "Grama",
-              "9": "Arroz",
-              "10": "Água"
-            }
-          },
-          "legends": [
+          "isOpen": false,
+          "members": [
             {
-              "items": [
-                {
-                  "title": "Milho",
-                  "color": "#df73ff",
-                  "outlineColor": "#7d73b2",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Campos mistos",
-                  "color": "#ffff00",
-                  "outlineColor": "#186118",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Áreas construídas",
-                  "color": "#ff0000",
-                  "outlineColor": "#A0C9A3",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Arbusto",
-                  "color": "#a8a800",
-                  "outlineColor": "#995077",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Árvores",
-                  "color": "#00734c",
-                  "outlineColor": "#995077",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Terra nua",
-                  "color": "#732600",
-                  "outlineColor": "#995077",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Grama",
-                  "color": "#98e600",
-                  "outlineColor": "#995077",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Arroz",
-                  "color": "rgba(230, 230, 77, 0.8)",
-                  "outlineColor": "#00ffc5",
-                  "addSpacingAbove": true
-                },
-                {
-                  "title": "Água",
-                  "color": "#3399FF",
-                  "outlineColor": "#995077",
-                  "addSpacingAbove": true
+              "id": "item-landcover-gaza",
+              "type": "cog",
+              "name": "Cobertura da terra - Gaza",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_gaza_lc_cog.tif",
+              "isOpenInWorkbench": false,
+              "renderOptions": {
+                "nodata": 32767,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#3399FF"],
+                    [1, "#732600"],
+                    [2, "#98e600"],
+                    [3, "#00ffc5"],
+                    [4, "#00734c"],
+                    [5, "#df73ff"],
+                    [6, "#ff0000"],
+                    [32767, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
                 }
-              ]
+              },
+              "featureInfoTemplate": {
+                "name": "Cobertura da terra",
+                "template": "Cobertura da terra: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+                "partials": {
+                  "0": "Água",
+                  "1": "Solo descoberto",
+                  "2": "Terras de alcance",
+                  "3": "Vegetação inundada",
+                  "4": "Árvores",
+                  "5": "Terra agrícola",
+                  "6": "Área construída",
+                  "32767": "Sem dados"
+                }
+              },
+              "legends": [
+                {
+                  "items": [
+                    {
+                      "title": "Água",
+                      "color": "#3399FF",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Solo descoberto",
+                      "color": "#732600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terras de alcance",
+                      "color": "#98e600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Vegetação inundada",
+                      "color": "rgba(230, 230, 77, 0.8)",
+                      "outlineColor": "#00ffc5",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Árvores",
+                      "color": "#00734c",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terra agrícola",
+                      "color": "#df73ff",
+                      "outlineColor": "#7d73b2",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Área construída",
+                      "color": "#ff0000",
+                      "outlineColor": "#A0C9A3",
+                      "addSpacingAbove": true
+                    }
+                  ]
+                }
+              ],
+              "description": "<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+            },
+            {
+              "id": "item-landcover-manica",
+              "type": "cog",
+              "name": "Cobertura da terra - Manica",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_manica_lc_cog.tif",
+              "isOpenInWorkbench": false,
+              "renderOptions": {
+                "nodata": 32767,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#3399FF"],
+                    [1, "#732600"],
+                    [2, "#98e600"],
+                    [3, "#00ffc5"],
+                    [4, "#00734c"],
+                    [5, "#df73ff"],
+                    [6, "#ff0000"],
+                    [32767, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
+                }
+              },
+              "featureInfoTemplate": {
+                "name": "Cobertura da terra",
+                "template": "Cobertura da terra: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+                "partials": {
+                  "0": "Água",
+                  "1": "Solo descoberto",
+                  "2": "Terras de alcance",
+                  "3": "Vegetação inundada",
+                  "4": "Árvores",
+                  "5": "Terra agrícola",
+                  "6": "Área construída",
+                  "32767": "Sem dados"
+                }
+              },
+              "legends": [
+                {
+                  "items": [
+                    {
+                      "title": "Água",
+                      "color": "#3399FF",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Solo descoberto",
+                      "color": "#732600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terras de alcance",
+                      "color": "#98e600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Vegetação inundada",
+                      "color": "rgba(230, 230, 77, 0.8)",
+                      "outlineColor": "#00ffc5",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Árvores",
+                      "color": "#00734c",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terra agrícola",
+                      "color": "#df73ff",
+                      "outlineColor": "#7d73b2",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Área construída",
+                      "color": "#ff0000",
+                      "outlineColor": "#A0C9A3",
+                      "addSpacingAbove": true
+                    }
+                  ]
+                }
+              ],
+              "description": "<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+            },
+            {
+              "id": "item-landcover-zambezia",
+              "type": "cog",
+              "name": "Cobertura da terra - Zambezia",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_zambezia_lc_cog.tif",
+              "isOpenInWorkbench": false,
+              "renderOptions": {
+                "nodata": 32767,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#3399FF"],
+                    [1, "#732600"],
+                    [2, "#98e600"],
+                    [3, "#00ffc5"],
+                    [4, "#00734c"],
+                    [5, "#df73ff"],
+                    [6, "#ff0000"],
+                    [32767, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
+                }
+              },
+              "featureInfoTemplate": {
+                "name": "Cobertura da terra",
+                "template": "Cobertura da terra: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+                "partials": {
+                  "0": "Água",
+                  "1": "Solo descoberto",
+                  "2": "Terras de alcance",
+                  "3": "Vegetação inundada",
+                  "4": "Árvores",
+                  "5": "Terra agrícola",
+                  "6": "Área construída",
+                  "32767": "Sem dados"
+                }
+              },
+              "legends": [
+                {
+                  "items": [
+                    {
+                      "title": "Água",
+                      "color": "#3399FF",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Solo descoberto",
+                      "color": "#732600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terras de alcance",
+                      "color": "#98e600",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Vegetação inundada",
+                      "color": "rgba(230, 230, 77, 0.8)",
+                      "outlineColor": "#00ffc5",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Árvores",
+                      "color": "#00734c",
+                      "outlineColor": "#995077",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Terra agrícola",
+                      "color": "#df73ff",
+                      "outlineColor": "#7d73b2",
+                      "addSpacingAbove": true
+                    },
+                    {
+                      "title": "Área construída",
+                      "color": "#ff0000",
+                      "outlineColor": "#A0C9A3",
+                      "addSpacingAbove": true
+                    }
+                  ]
+                }
+              ],
+              "description": "<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
             }
           ],
-          "description": "<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+          "description": "Uso/cobertura do solo para Gaza, Manica e Zambézia. Esses conjuntos de dados não podem ser exibidos no visualizador 2D. Alterne para um dos modos de mapa 3D em <em>Configurações do Mapa</em>.<h4>Preparação de Dados</h4><p>Uma série temporal de imagens multiespectrais ópticas do Sentinel-2 e dados de Radar de Abertura Sintética (SAR) do Sentinel-1, adquiridos em 2023, juntamente com o Modelo Digital de Elevação (MDE), foram classificadas por meio de testes e comparação de diferentes soluções de Aprendizado de Máquina. Após a etapa de preparação dos dados, extraímos características relevantes para aprimorar os resultados da classificação (por exemplo, características texturais, índices espectrais, etc.). O resultado é um mapa de cobertura do solo baseado em pixels para 2023, abrangendo toda a província de Gaza..</p><p>Uma abordagem de amostragem aleatória estratificada foi empregada para garantir uma representação estatística das várias classes na cena, que são <em>Água</em>, <em>Milho</em>, <em>Vegetação inundada</em>, <em>Campos mistos</em>, <em>Construídos</em>, <em>Arbustos</em>, <em>Árvores</em>, <em>Nuas</em>, <em>Grama</em> e <em>Arroz</em>. As amostras foram rotuladas por fotointerpretação de imagens de satélite VHR.</p><h4>Validação de dados</h4><p>Para a avaliação quantitativa, um conjunto de amostras rotuladas foi dividido em conjuntos de treinamento e teste (1274 pontos), considerando localizações espacialmente disjuntas para garantir resultados estatisticamente independentes. Os resultados quantitativos foram confirmados pela análise qualitativa realizada através da verificação do mapa obtido (ver exemplo abaixo).</p><img src='/images/landcover-validation.png' width='100%'><h4>Matriz de Erros</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Descobertas</h4><ol><li>A amostragem aleatória estratificada garante uma forte representação das principais classes presentes na cena.</li><li>A combinação de dados SAR, DEM e multiespectrais, bem como a utilização de informações temporais, permite a identificação confiável das áreas agrícolas.</li><li>Ao contrário dos produtos existentes em escala global, nossa abordagem é especificamente adaptada à área de estudo, resultando em um classificador mais personalizado.</li><li>Ao aproveitar a fotointerpretação de dados de satélite VHR conduzida por uma empresa externa dentro das áreas de amostragem para distinguir terras cultivadas de não cultivadas, comparamos nossos mapas de cultivo/sem cultivo com o produto ESRI (atualmente o melhor produto em escala global). Nossos resultados melhoram significativamente a identificação de áreas cultivadas (veja abaixo).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Explicação do erro</h4><ol><li>Sentinel-2 e Sentinel-1 oferecem uma resolução espacial de 10m. Isto é bom, mas a complexa paisagem agrícola de Moçambique — caracterizada por pequenas explorações agrícolas, culturas intercalares e pela presença de pastagens e árvores nos campos — coloca desafios significativos.</li><li>A distinção entre pastagens, terras de cultivo e pastagens é mal formulada na área de estudo devido à ausência de práticas agrícolas bem definidas.</li><li>A coleta de dados de referência adicionais no campo melhoraria a precisão dos resultados.</li></ol><h4>Recursos</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
         },
         {
           "id": "item-ndvi",
