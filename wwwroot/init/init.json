@@ -11,7 +11,7 @@
       "id": "item-statistics",
       "name": "Crop Statistics",
       "isOpen": true,
-      "description": "Statistical analysis of crop data",
+      "description": "Statistical analysis of crop data.",
       "members": [
         {
           "type": "group",
@@ -204,10 +204,11 @@
               "id": "item-stats-strata",
               "type": "csv",
               "keepOnTop": true,
+              "show": false,
               "name": "Strata Coverage per District",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
               "isOpenInWorkbench": false,
-              "hideLegendInWorkbench": true,
+              "hideLegendInWorkbench": false,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
@@ -252,7 +253,7 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular" },
+              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -263,6 +264,67 @@
                       "default": "Regular",
                       "multipleValues": false,
                       "values": ["Regular", "Scarce", "Irrigated"]
+                    },
+                    {
+                      "name": "stratum",
+                      "title": "Stratum",
+                      "default": "Alluvial",
+                      "multipleValues": true,
+                      "values": [
+                        "Alluvial",
+                        "Broad Valley",
+                        "Central Pedi",
+                        "Common Pedi",
+                        "6 Early Alluvial",
+                        "5 Early Alluvial",
+                        "9 Early Alluvial",
+                        "8 Early Alluvial",
+                        "6 Early Coastal Pedi",
+                        "Early Hill-Pedi",
+                        "6 Early Inland Pedi",
+                        "4 Early Inland Pedi",
+                        "Early Montane",
+                        "10 Early Pedi",
+                        "7 Early Pedi",
+                        "Early Pedi",
+                        "24-33 Flood",
+                        "23 Flood",
+                        "32 Flood",
+                        "12 Flood",
+                        "9 Flood",
+                        "17 Flood",
+                        "Flood",
+                        "Gondola & Mossurize Hills",
+                        "Hill-Pedi",
+                        "Inland Alluvial",
+                        "Internal Pedi",
+                        "Irrigated Alluvial",
+                        "Irrigated Flood",
+                        "Irrigated Pedi",
+                        "7 Late Alluvial",
+                        "Late Alluvial",
+                        "Late Hill-Pedi",
+                        "Late Montane",
+                        "11 Late Pedi",
+                        "12 Late Pedi",
+                        "5 Late Pedi",
+                        "8 Late Pedi",
+                        "Late Pedi",
+                        "Narrow Valley",
+                        "Northern & Southern Pedi",
+                        "Northwestern Pedi",
+                        "Scarce Alluvial",
+                        "Scarce Broad Valley",
+                        "Scarce Coastal Pedi",
+                        "Scarce Flood",
+                        "Scarce Hill",
+                        "Scarce Hill-Pedi",
+                        "Scarce Montane",
+                        "Scarce Pedi",
+                        "Scarce Western Pedi",
+                        "Sussundenga Hills",
+                        "Western Alluvial"
+                      ]
                     }
                   ]
                 }
@@ -280,7 +342,7 @@
               "id": "item-crop-percentages-province",
               "type": "csv",
               "name": "Crop Coverage (Area/Percentage) per Province",
-              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
+              "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/crop/percentage?lang=en",
               "isOpenInWorkbench": true,
               "hideLegendInWorkbench": false,
               "keepOnTop": true,
@@ -454,7 +516,7 @@
               "name": "Strata Coverage per Province",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/strata?lang=en",
               "isOpenInWorkbench": false,
-              "hideLegendInWorkbench": true,
+              "hideLegendInWorkbench": false,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
@@ -494,7 +556,7 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular" },
+              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -505,6 +567,67 @@
                       "default": "Regular",
                       "multipleValues": false,
                       "values": ["Regular", "Scarce", "Irrigated"]
+                    },
+                    {
+                      "name": "stratum",
+                      "title": "Stratum",
+                      "default": "Alluvial",
+                      "multipleValues": true,
+                      "values": [
+                        "Alluvial",
+                        "Broad Valley",
+                        "Central Pedi",
+                        "Common Pedi",
+                        "6 Early Alluvial",
+                        "5 Early Alluvial",
+                        "9 Early Alluvial",
+                        "8 Early Alluvial",
+                        "6 Early Coastal Pedi",
+                        "Early Hill-Pedi",
+                        "6 Early Inland Pedi",
+                        "4 Early Inland Pedi",
+                        "Early Montane",
+                        "10 Early Pedi",
+                        "7 Early Pedi",
+                        "Early Pedi",
+                        "24-33 Flood",
+                        "23 Flood",
+                        "32 Flood",
+                        "12 Flood",
+                        "9 Flood",
+                        "17 Flood",
+                        "Flood",
+                        "Gondola & Mossurize Hills",
+                        "Hill-Pedi",
+                        "Inland Alluvial",
+                        "Internal Pedi",
+                        "Irrigated Alluvial",
+                        "Irrigated Flood",
+                        "Irrigated Pedi",
+                        "7 Late Alluvial",
+                        "Late Alluvial",
+                        "Late Hill-Pedi",
+                        "Late Montane",
+                        "11 Late Pedi",
+                        "12 Late Pedi",
+                        "5 Late Pedi",
+                        "8 Late Pedi",
+                        "Late Pedi",
+                        "Narrow Valley",
+                        "Northern & Southern Pedi",
+                        "Northwestern Pedi",
+                        "Scarce Alluvial",
+                        "Scarce Broad Valley",
+                        "Scarce Coastal Pedi",
+                        "Scarce Flood",
+                        "Scarce Hill",
+                        "Scarce Hill-Pedi",
+                        "Scarce Montane",
+                        "Scarce Pedi",
+                        "Scarce Western Pedi",
+                        "Sussundenga Hills",
+                        "Western Alluvial"
+                      ]
                     }
                   ]
                 }
@@ -515,214 +638,236 @@
       ]
     },
     {
-      "id": "item-landcover",
-      "type": "cog",
-      "name": "Land Cover",
-      "url": "https://cog-mafra.s3.amazonaws.com/raster/landcover.tif",
-      "isOpenInWorkbench": false,
-      "renderOptions": {
-        "nodata": 0,
-        "resampleMethod": "nearest",
-        "single": {
-          "colors": [
-            [0, "rgba(255, 255, 255, 0)"],
-            [1, "#df73ff"],
-            [3, "#ffff00"],
-            [4, "#ff0000"],
-            [5, "#a8a800"],
-            [6, "#00734c"],
-            [7, "#732600"],
-            [8, "#98e600"],
-            [9, "#00ffc5"],
-            [10, "#3399FF"]
-          ],
-          "type": "discrete",
-          "useRealValue": true
-        }
-      },
-      "featureInfoTemplate": {
-        "name": "Land Cover",
-        "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
-        "partials": {
-          "0": "No data",
-          "1": "Maize",
-          "3": "Mixed fields",
-          "4": "Built up",
-          "5": "Shrub",
-          "6": "Trees",
-          "7": "Bare",
-          "8": "Grass",
-          "9": "Rice",
-          "10": "Water"
-        }
-      },
-      "legends": [
+      "type": "group",
+      "id": "item-preparatory",
+      "name": "Preparatory Data",
+      "isOpen": false,
+      "description": "Preparatory Data for the analysis of crop statistics.",
+      "members": [
         {
-          "items": [
+          "type": "group",
+          "id": "item-admins",
+          "name": "Administrative areas",
+          "description": "Statistical analysis of crop data",
+          "members": [
             {
-              "title": "Maize",
-              "color": "#df73ff",
-              "outlineColor": "#7d73b2",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Mixed fields",
-              "color": "#ffff00",
-              "outlineColor": "#186118",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Built up",
-              "color": "#ff0000",
-              "outlineColor": "#A0C9A3",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Shrub",
-              "color": "#a8a800",
-              "outlineColor": "#995077",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Trees",
-              "color": "#00734c",
-              "outlineColor": "#995077",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Bare",
-              "color": "#732600",
-              "outlineColor": "#995077",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Grass",
-              "color": "#98e600",
-              "outlineColor": "#995077",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Rice",
-              "color": "rgba(230, 230, 77, 0.8)",
-              "outlineColor": "#00ffc5",
-              "addSpacingAbove": true
-            },
-            {
-              "title": "Water",
-              "color": "#3399FF",
-              "outlineColor": "#995077",
-              "addSpacingAbove": true
+              "id": "item-districts",
+              "type": "wms",
+              "name": "Districts",
+              "layers": "mapfra:mvw_districts",
+              "keepOnTop": false,
+              "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+              "isOpenInWorkbench": false,
+              "hideLegendInWorkbench": true,
+              "parameters": {
+                "srs": "EPSG:3857"
+              },
+              "featureInfoTemplate": {
+                "template": "<table><tr><td>Province</b></td><td>{{province}}</td></tr><tr><td>District</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivated vs uncultivated' open='true'><chart title='Cultivated vs Uncultivated' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv?lang=en' x-column='Farming class'  y-columns='Area (ha)' column-units='Ha'></chart></collapsible><collapsible title='Crops'><csvtable title='Uncultivated' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv?lang=en' y-columns='Crop Name,Area (ha)' column-titles='Crop Name,Area (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv?lang=en' y-columns='Strata,Area (ha)' column-titles='Strata,Area (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
+              },
+              "customProperties": {
+                "charts": [
+                  {
+                    "type": "bar",
+                    "xAxis": {
+                      "colors": ["#a0c9a3", "#186118", "#7d73b2", "#e6e64d"]
+                    }
+                  }
+                ]
+              },
+              "dimensions": { "Province": "Gaza" },
+              "availableDimensions": [
+                {
+                  "layerName": "mapfra:mvw_districts",
+                  "dimensions": [
+                    {
+                      "name": "Province",
+                      "default": "Gaza",
+                      "multipleValues": false,
+                      "values": ["Gaza", "Manica", "Zambezia"]
+                    }
+                  ]
+                }
+              ]
             }
           ]
-        }
-      ],
-      "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
-    },
-    {
-      "id": "item-ndvi",
-      "type": "wms",
-      "name": "NDVI Profiles",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
-      "layers": "mapfra:ndvi",
-      "hideLegendInWorkbench": true,
-      "opacity": 1,
-      "show": true,
-      "parameters": {
-        "srs": "EPSG:3857",
-        "version": "1.1.1"
-      },
-      "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
-      "featureInfoTemplate": {
-        "name": "NDVI Cluster {{GRAY_INDEX}}",
-        "template": "<p>NDVI Profile.</p><chart title='NDVI profile' chart-type='line' src='https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile/{{GRAY_INDEX}}/csv' x-column='Dekad' y-columns='10-th Percentile,50-th Percentile,90-th Percentile' column-units='Dekad'></chart>"
-      },
-      "customProperties": {
-        "charts": [
-          {
-            "type": "line",
-            "xAxis": {
-              "colors": ["#bae4b3"]
-            }
-          },
-          {
-            "type": "line",
-            "xAxis": {
-              "colors": ["#006d2c"]
-            }
-          },
-          {
-            "type": "line",
-            "xAxis": {
-              "colors": ["#bae4b3"]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "item-plots",
-      "type": "wms",
-      "name": "Sampling Areas (SA)",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
-      "layers": "mapfra:plots",
-      "opacity": 1,
-      "parameters": {
-        "srs": "EPSG:3857",
-        "version": "1.1.1"
-      },
-      "legends": [
-        {
-          "title": "Plot segments",
-          "imageScaling": 0.6,
-          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:segments_en&LEGEND_OPTIONS=fontName%3ACourier%3BfontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3Bdpi%3A182&transparent=false"
         },
         {
-          "title": "Sampling Plots",
-          "imageScaling": 0.5,
-          "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:sample_plots500&LEGEND_OPTIONS=fontName%3ACourier%3fontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3BfontColor%3A0xffffff%3Bdpi%3A182&transparent=true"
+          "id": "item-landforms",
+          "type": "wms",
+          "name": "Land Forms",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "layers": "mapfra:mvw_landforms",
+          "opacity": 1,
+          "parameters": {
+            "srs": "EPSG:3857"
+          },
+          "featureInfoTemplate": {
+            "name": "Land Form - {{landform}}",
+            "template": "<table><tr><td><b>Landform Type</b></td><td>{{landform}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+          }
+        },
+        {
+          "id": "item-landcover",
+          "type": "cog",
+          "name": "Land Cover",
+          "url": "https://cog-mafra.s3.amazonaws.com/raster/landcover.tif",
+          "isOpenInWorkbench": false,
+          "renderOptions": {
+            "nodata": 0,
+            "resampleMethod": "nearest",
+            "single": {
+              "colors": [
+                [0, "rgba(255, 255, 255, 0)"],
+                [1, "#df73ff"],
+                [3, "#ffff00"],
+                [4, "#ff0000"],
+                [5, "#a8a800"],
+                [6, "#00734c"],
+                [7, "#732600"],
+                [8, "#98e600"],
+                [9, "#00ffc5"],
+                [10, "#3399FF"]
+              ],
+              "type": "discrete",
+              "useRealValue": true
+            }
+          },
+          "featureInfoTemplate": {
+            "name": "Land Cover",
+            "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
+            "partials": {
+              "0": "No data",
+              "1": "Maize",
+              "3": "Mixed fields",
+              "4": "Built up",
+              "5": "Shrub",
+              "6": "Trees",
+              "7": "Bare",
+              "8": "Grass",
+              "9": "Rice",
+              "10": "Water"
+            }
+          },
+          "legends": [
+            {
+              "items": [
+                {
+                  "title": "Maize",
+                  "color": "#df73ff",
+                  "outlineColor": "#7d73b2",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Mixed fields",
+                  "color": "#ffff00",
+                  "outlineColor": "#186118",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Built up",
+                  "color": "#ff0000",
+                  "outlineColor": "#A0C9A3",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Shrub",
+                  "color": "#a8a800",
+                  "outlineColor": "#995077",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Trees",
+                  "color": "#00734c",
+                  "outlineColor": "#995077",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Bare",
+                  "color": "#732600",
+                  "outlineColor": "#995077",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Grass",
+                  "color": "#98e600",
+                  "outlineColor": "#995077",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Rice",
+                  "color": "rgba(230, 230, 77, 0.8)",
+                  "outlineColor": "#00ffc5",
+                  "addSpacingAbove": true
+                },
+                {
+                  "title": "Water",
+                  "color": "#3399FF",
+                  "outlineColor": "#995077",
+                  "addSpacingAbove": true
+                }
+              ]
+            }
+          ],
+          "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+        },
+        {
+          "id": "item-ndvi",
+          "type": "wms",
+          "name": "NDVI Profiles",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+          "layers": "mapfra:ndvi",
+          "hideLegendInWorkbench": true,
+          "opacity": 1,
+          "show": true,
+          "parameters": {
+            "srs": "EPSG:3857",
+            "version": "1.1.1"
+          },
+          "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
+          "featureInfoTemplate": {
+            "name": "NDVI Cluster {{GRAY_INDEX}}",
+            "template": "<p>NDVI Profile.</p><chart title='NDVI profile' chart-type='line' src='https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile/{{GRAY_INDEX}}/csv' x-column='Dekad' y-columns='10-th Percentile,50-th Percentile,90-th Percentile' column-units='Dekad'></chart>"
+          },
+          "customProperties": {
+            "charts": [
+              {
+                "type": "line",
+                "xAxis": {
+                  "colors": ["#bae4b3"]
+                }
+              },
+              {
+                "type": "line",
+                "xAxis": {
+                  "colors": ["#006d2c"]
+                }
+              },
+              {
+                "type": "line",
+                "xAxis": {
+                  "colors": ["#bae4b3"]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "item-farmingclasses",
+          "type": "wms",
+          "name": "Farming Classes",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "layers": "mapfra:mvw_farmingclasses",
+          "opacity": 1,
+          "parameters": {
+            "srs": "EPSG:3857"
+          },
+          "featureInfoTemplate": {
+            "name": "Farming Class - {{fcname}}",
+            "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
+          }
         }
       ]
-    },
-    {
-      "id": "item-segmentscores",
-      "type": "wms",
-      "name": "Segment Crop Scores",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-      "layers": "mapfra:segment_crop_scores",
-      "opacity": 1,
-      "parameters": {
-        "srs": "EPSG:3857"
-      }
-    },
-    {
-      "id": "item-landforms",
-      "type": "wms",
-      "name": "Land Forms",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-      "layers": "mapfra:mvw_landforms",
-      "opacity": 1,
-      "parameters": {
-        "srs": "EPSG:3857"
-      },
-      "featureInfoTemplate": {
-        "name": "Land Form - {{landform}}",
-        "template": "<table><tr><td><b>Landform Type</b></td><td>{{landform}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
-      }
-    },
-    {
-      "id": "item-farmingclasses",
-      "type": "wms",
-      "name": "Farming Classes",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-      "layers": "mapfra:mvw_farmingclasses",
-      "opacity": 1,
-      "parameters": {
-        "srs": "EPSG:3857"
-      },
-      "featureInfoTemplate": {
-        "name": "Farming Class - {{fcname}}",
-        "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
-      }
     },
     {
       "id": "item-strata",
@@ -731,7 +876,7 @@
       "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
       "layers": "mapfra:mvw_strata",
       "opacity": 1,
-      "show": false,
+      "show": true,
       "parameters": {
         "srs": "EPSG:3857"
       },
@@ -743,49 +888,45 @@
     },
     {
       "type": "group",
-      "id": "item-admins",
-      "name": "Administrative areas",
-      "description": "Statistical analysis of crop data",
+      "id": "item-field-data",
+      "name": "Field Work Data",
+      "isOpen": false,
+      "description": "Field work data.",
       "members": [
         {
-          "id": "item-districts",
+          "id": "item-plots",
           "type": "wms",
-          "name": "Districts",
-          "layers": "mapfra:mvw_districts",
-          "keepOnTop": false,
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-          "isOpenInWorkbench": false,
-          "hideLegendInWorkbench": true,
+          "name": "Sampling Areas (SA)",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+          "layers": "mapfra:plots",
+          "opacity": 1,
           "parameters": {
-            "srs": "EPSG:3857"
+            "srs": "EPSG:3857",
+            "version": "1.1.1"
           },
-          "featureInfoTemplate": {
-            "template": "<table><tr><td>Province</b></td><td>{{province}}</td></tr><tr><td>District</b></td><td>{{name}}</td></tr></table><br/><collapsible title='Cultivated vs uncultivated' open='true'><chart title='Cultivated vs Uncultivated' chart-type='bar' type='bar' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/farming/csv?lang=en' x-column='Farming class'  y-columns='Area (ha)' column-units='Ha'></chart></collapsible><collapsible title='Crops'><csvtable title='Uncultivated' id='csv-test' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/crop/csv?lang=en' y-columns='Crop Name,Area (ha)' column-titles='Crop Name,Area (ha)' can-expand='false'></csvtable></collapsible><collapsible title='Strata'><csvtable title='Strata' id='strata-table' src='https://mapfra.itc.utwente.nl/api/v2/stats/district/{{id}}/strata/csv?lang=en' y-columns='Strata,Area (ha)' column-titles='Strata,Area (ha)' can-download='true' can-expand='false'></csvtable></collapsible>"
-          },
-          "customProperties": {
-            "charts": [
-              {
-                "type": "bar",
-                "xAxis": {
-                  "colors": ["#a0c9a3", "#186118", "#7d73b2", "#e6e64d"]
-                }
-              }
-            ]
-          },
-          "dimensions": { "Province": "Gaza" },
-          "availableDimensions": [
+          "legends": [
             {
-              "layerName": "mapfra:mvw_districts",
-              "dimensions": [
-                {
-                  "name": "Province",
-                  "default": "Gaza",
-                  "multipleValues": false,
-                  "values": ["Gaza", "Manica", "Zambezia"]
-                }
-              ]
+              "title": "Plot segments",
+              "imageScaling": 0.6,
+              "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:segments_en&LEGEND_OPTIONS=fontName%3ACourier%3BfontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3Bdpi%3A182&transparent=false"
+            },
+            {
+              "title": "Sampling Plots",
+              "imageScaling": 0.5,
+              "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:sample_plots500&LEGEND_OPTIONS=fontName%3ACourier%3fontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3BfontColor%3A0xffffff%3Bdpi%3A182&transparent=true"
             }
           ]
+        },
+        {
+          "id": "item-segmentscores",
+          "type": "wms",
+          "name": "Segment Crop Scores",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "layers": "mapfra:segment_crop_scores",
+          "opacity": 1,
+          "parameters": {
+            "srs": "EPSG:3857"
+          }
         }
       ]
     }
