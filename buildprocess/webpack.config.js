@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 const configureWebpackForTerriaJS = require("terriajs/buildprocess/configureWebpack");
 const configureWebpackForPlugins = require("./configureWebpackForPlugins");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
