@@ -138,7 +138,7 @@
                   }
                 }
               },
-              "activeStyle": "regular",
+              "activeStyle": "percentage",
               "columns": [
                 {
                   "title": "Provincia",
@@ -151,34 +151,44 @@
                   "type": "hidden"
                 },
                 {
-                  "title": "Área total (Ha)",
-                  "name": "total_area",
-                  "type": "hidden"
+                  "title": "Área (Ha)",
+                  "name": "area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 0
+                  }
                 },
                 {
-                  "title": "Agricultura Escassa (Ha)",
-                  "name": "scarce",
-                  "type": "string"
-                },
-                {
-                  "title": "Regular (Ha)",
-                  "name": "regular",
-                  "type": "string"
-                },
-                {
-                  "title": "Irrigada (Ha)",
-                  "name": "irrigated",
-                  "type": "string"
-                },
-                {
-                  "title": "Não cultivado (Ha)",
-                  "name": "uncultivated",
-                  "type": "string"
+                  "title": "Área (Ha)",
+                  "name": "area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 0
+                  }
                 }
               ],
               "defaultColumn": {
-                "name": "regular"
-              }
+                "name": "percentage"
+              },
+              "dimensions": { "Farming Class": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Porcentagens",
+                  "dimensions": [
+                    {
+                      "name": "Farming Class",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": [
+                        "Regular",
+                        "Scarce",
+                        "Irrigated",
+                        "Uncultivated"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "item-stats-strata",
@@ -433,7 +443,7 @@
                   }
                 }
               },
-              "activeStyle": "regular",
+              "activeStyle": "percentage",
               "columns": [
                 {
                   "title": "Provincia",
@@ -441,34 +451,44 @@
                   "type": "hidden"
                 },
                 {
-                  "title": "Área total (Ha)",
-                  "name": "total_area",
-                  "type": "hidden"
+                  "title": "Área (Ha)",
+                  "name": "area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 0
+                  }
                 },
                 {
-                  "title": "Agricultura Escassa (Ha)",
-                  "name": "scarce",
-                  "type": "string"
-                },
-                {
-                  "title": "Regular (Ha)",
-                  "name": "regular",
-                  "type": "string"
-                },
-                {
-                  "title": "Irrigada (Ha)",
-                  "name": "irrigated",
-                  "type": "string"
-                },
-                {
-                  "title": "Não cultivado (Ha)",
-                  "name": "uncultivated",
-                  "type": "string"
+                  "title": "Área (Ha)",
+                  "name": "area",
+                  "type": "number",
+                  "format": {
+                    "maximumFractionDigits": 0
+                  }
                 }
               ],
               "defaultColumn": {
-                "name": "regular"
-              }
+                "name": "percentage"
+              },
+              "dimensions": { "Farming Class": "Regular" },
+              "availableDimensions": [
+                {
+                  "layerName": "Porcentagens",
+                  "dimensions": [
+                    {
+                      "name": "Farming Class",
+                      "default": "Regular",
+                      "multipleValues": false,
+                      "values": [
+                        "Regular",
+                        "Scarce",
+                        "Irrigated",
+                        "Uncultivated"
+                      ]
+                    }
+                  ]
+                }
+              ]
             },
             {
               "id": "item-stats-strata-province",
