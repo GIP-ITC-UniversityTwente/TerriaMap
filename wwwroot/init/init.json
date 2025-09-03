@@ -508,7 +508,7 @@
                   }
                 },
                 {
-                  "title": "Percentagem (%)",
+                  "title": "Percentage (%)",
                   "name": "percentage",
                   "type": "number",
                   "format": {
