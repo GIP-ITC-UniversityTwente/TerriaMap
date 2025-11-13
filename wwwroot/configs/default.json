@@ -27,7 +27,7 @@
       "<a target=\"_blank\" href=\"https://mapfra.itc.utwente.nl\"><img src=\"/images/logo.svg\" height=\"52\" title=\"Version: {{version}}\" /></a>",
       ""
     ],
-    "supportEmail": "r.o.ohuru@utwente.nl",
+    "supportEmail": "a.nelson@utwente.nl",
     "proj4ServiceBaseUrl": "proj4def/",
     "feedbackUrl": "feedback",
     "mobileDefaultViewerMode": "2d",
@@ -44,8 +44,8 @@
       "mobileTitle": "Statistics from Space",
       "videoUrl": null,
       "placeholderImage": null,
-      "description": "The Statistics from Space aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress. The project is a collaboration between IFPRI (Washington, DC), UT/ITC (GIP, NRS), Universidade Eduardo Mondlane (Maputo, Mozambique) and Seoul National University (South Korea). Funding comes from South Korea's Ministry of Agriculture, Food and Rural Affairs (MAFRA).",
-      "mobileDescription": "The Statistics from Space aims to develop and realize a robust system for agricultural production statistics in Mozambique. The foreseen eventual user is the Ministry of Agriculture and Rural Development (MADER). At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In these days, fieldwork is conducted in the province of Manica, the first we are addressing. Originally, we were scheduled to start in the more southern Gaza province but floods there prevented work to be carried out. Because of ongoing fieldwork we are happy to see the data come in and follow progress."
+      "description": "The Statistics from Space project aims to develop and realize a robust system for agricultural production statistics in Mozambique.  The foreseen eventual user is the MAAP, being the <a href='https://www.agricultura.gov.mz/'><u><em>Ministério da Agricultura, Ambiente e Pescas</em></u></a>  (Ministry of Agriculture and Environment and Fisheries).. At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In 2025, we conducted feldwork in the three provinces.  Environmental conditions were such that not all sampling areas could be visited.  The monitor page informs about completion levels. The project is a collaboration between IFPRI (Washington, DC), University of Twente ITC (The Netherlands), Universidade Eduardo Mondlane (Maputo, Mozambique) and Seoul National University (South Korea). Funding comes from South Korea's Ministry of Agriculture, Food and Rural Affairs (MAFRA).",
+      "mobileDescription": "The Statistics from Space project aims to develop and realize a robust system for agricultural production statistics in Mozambique.  The foreseen eventual user is the MAAP, being the <a href='https://www.agricultura.gov.mz/'><u><em>Ministério da Agricultura, Ambiente e Pescas</em></u></a> (Ministry of Agriculture and Environment and Fisheries).. At present, our second-year pilot involves three provinces: Gaza, Manica and Zambezia. In 2025, we conducted feldwork in the three provinces.  Environmental conditions were such that not all sampling areas could be visited.  The monitor page informs about completion levels."
     },
     "showInAppGuides": false,
     "languageConfiguration": {

@@ -724,7 +724,7 @@
         {
           "id": "item-landforms",
           "type": "wms",
-          "name": "Land Forms",
+          "name": "Sfs Land Forms",
           "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "layers": "mapfra:mvw_landforms",
           "opacity": 1,
@@ -732,9 +732,10 @@
             "srs": "EPSG:3857"
           },
           "featureInfoTemplate": {
-            "name": "Land Form - {{landform}}",
+            "name": "SfS Land Form - {{landform}}",
             "template": "<table><tr><td><b>Landform Type</b></td><td>{{landform}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
-          }
+          },
+          "description": "<h4>Preparation</h4>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. Our data derives from the shapefiles for that publication, and landforms is only one  attribute in the data, which we generalized to multipolygon landform features. <h4>Validation</h4>Validation scripts were run to (1) mosaic the map sheets to a seamless data set, (2) test the spatial data for (OGC) simple feature correctness, and correct where necessary, and (3) test the spatially aggregated data for completeness (no gaps) and province boundary agreement, with possible adjustments. One map sheet for SE Manica was missing from the original data, and feature extents in this location were inferred from a published pdf document and Google Earth cross-checks.<h4>Publication Date</h4>Original 2013 (Cenacarta); as open access map layer 2025 (University of Twente/ITC)<h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a><h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
         },
         {
           "type": "group",
@@ -1048,12 +1049,13 @@
                 }
               }
             ]
-          }
+          },
+          "description": "<h4>Preparation</h4><p>This is a hypertemporal NDVI map for Mozambique at a 1 km2 resolution, based on Copernicus NDVI 1999-2020 (raster 1 km), global, 10-daily, version 3. DOI: <a href='https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248'>https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248</a> As per that source, NDVI values are scored on a [0,250] scale.</p><p>Our data presents a long-term, coarse-resolution NDVI time series derived from 36 10-day composites of SPOT-VGT (-2013) and PROBA-V (2014-) imagery over 20 years. Each dekad composite selects the maximum NDVI value across available daily observations within the 10 days to minimize cloud and haze effects, while emphasizing the vegetation greenness. Per location (pixel) and per dekad this gives 20 readings, of which we determine the 10-, 50- and 90- percentile, leading to three (10,50,90) NDVI development curves with 36 time points in the year.</p><p>These curves are shown from the pixel query in the data layer. Pixel-level curve similarity in this long-term series identifies areas with similar seasonal trajectories, while reflecting in their magnitude the variations in vegetation phenology, vigor, productivity, and management intensity.  We applied an ISODATA clustering algorithm over all pixels' NDVI curves that led to 61 clusters, which are represented in the colour legend.  In subsequent process to define strata, clusters may be taken together, especially when they appear to express NDVI gradients.</p> <h4>Validation</h4>No specific validation has taken place, other than visual inspection of the spatial patterns that occur in the data and whether they meet expectation and seem  reasonable. <h4>Publication Date</h4>Open access raster layer, 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
         },
         {
           "id": "item-farmingclasses",
           "type": "wms",
-          "name": "Farming Classes",
+          "name": "Sfs Farming Intensity",
           "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "layers": "mapfra:mvw_farmingclasses",
           "opacity": 1,
@@ -1061,16 +1063,17 @@
             "srs": "EPSG:3857"
           },
           "featureInfoTemplate": {
-            "name": "Farming Class - {{fcname}}",
+            "name": "Farming Intensity - {{fcname}}",
             "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
-          }
+          },
+          "description": "<h4>Preparation</h4><p>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. For Gaza province, our data derives from the shapefiles for that publication, and farming intensity is only one attribute in the data, which we generalized to multipolygon farming intensity features features. For Zambezia and Manica, we uses a more experimental set-up.</p><p>We applied a time series of Sentinel-1/-2 images to construct three seasonal composities representing early, later and dry vegetation peaks.  Additional topographic information came from SRTM. Geometric, textural and spectral features were extracted with texture applying the GLCM method, producing ASM, CO, CORR, VAR, IDF, ENT, DVAR and DENT scores. Seven spectral features were derived: NDVI, EVI, NDWI, GNDVI, SAVI, NDMI and BSI. The three topological features were elevation, aspect and slope. Land cover reference samples came from SfS fieldwork, augmented with data from the 2023 Esri Global Land Cover dataset.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene. Figure 8.2 illustrates the number of samples and the spatial distribution of the reference data across the considered set of land-cover classes, which are Water, Maize, Flooded Vegetation, Mixed Fields, Built-up, Shrub, Trees, Bare, Grass and Rice.</p><p>Several machine learning algorithms were tested and compared to determine the most effective solutions, including Random Forest, Support Vector Machine, Decision Tree and xgBoost. The output is a land cover raster, which for the purpose of derving a farming intensity map is transformed into a crop/no crop raster.</p><p>In the final stage of producing this data, we apply a hexagon grid with cell size of 100 ha over the area and determine frequency of crop cells in the crop/no crop raster. These frequencies are classified as 'no farming', 'scarce farming' and 'regular farming', using frequency cut-offs: < 5%, 5-20%, 20-100%.  A smoothing operator removes single hexagon cells that are entirely embedded in a ring of six cells of one single farming intensity class.  Cells of same class are aggregated to multipolygons.</p> <h4>Validation</h4>Validation scripts were run on several phases of the construction process: the stratified classification in its various disguises and hexagon map construction.     We must still conduct a comparison study with Gaza faming intensity as used and as     would have been used under the experimental set-up used for Zambezia and Manica. <h4>Publication Date</h4>Original 2013 (Cenacarta); as open access multipolygon layer 2025(University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
         }
       ]
     },
     {
       "id": "item-strata",
       "type": "wms",
-      "name": "Strata",
+      "name": "Sfs Agro-ecological Strata",
       "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
       "layers": "mapfra:mvw_strata",
       "opacity": 1,
@@ -1079,10 +1082,11 @@
         "srs": "EPSG:3857"
       },
       "featureInfoTemplate": {
-        "name": "Strata - {{stratum}}",
+        "name": "Sfs Agro-ecological Strata - {{stratum}}",
         "template": "<table><tr><td><b>Stratum</b></td><td>{{stratum}}</td></tr><tr><td><b>Landform</b></td><td>{{landform}}</td></tr><tr><td><b>Farming class</b></td><td>{{fcname}}</td></tr><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
       },
-      "isOpenInWorkbench": false
+      "isOpenInWorkbench": false,
+      "description": "<h4>Preparation</h4><p>Based on SfS Landforms, SfS NDVI Profiles and SfS Farming intensity data, we derive per province a set of agro-ecological strata. These should be understood as homogeneous areas within which vegetation growth displays high similarity in vigor, timing and intensity throughout a typical year.</p><p>Strata derivation is predominantly a process of conducting a three-way spatial intersection of polygonic data layers.  By construction, a resulting feature is associated with a single province, a single farming intensity class and a single landform.  This leads to a large collection of candidate strata, not all of which will be accepted as final strata.  As rule of thumb, will we only include strata that are above the area threshold set by considering that we plan to have 100 SAs in the province, so considering the total area of scarce and regular farming, the strata size threshold is 1% of that total.  Strata below that threshold can be made part of an established stratum when they meet three criteria: (a) the two strata are in the same landform and farming intensity class, (b) their geometry parts are mostly neighbouring the included stratum geometry (so they help shape larger geometry parts when unioned), and (c) their NDVI profile can be considered as a gradient version of the included stratum NDVI profile. That is, the associated NDVI curves look like vertically translated versions of each other.  Where a candidate stratum meets the two conditions with more than one established stratum, expert judgment shall decide on basis of NDVI curve similarity and established stratum size, where smaller is better.</p><p>This process of adding smaller candidate strata to established strata continues until no candidates exist that meet the merger criteria.  Smoothening takes place on the (possibly unioned) geometries: small parts and small holes are removed using a size threshold. This step is required to allow the identification of sufficiently many SAs later in the workflow. The experimental strata defined for Gaza in 2023, used in 2024 was retained for the 2025 fieldwork campaign.  This was done because comparison between the two years was considered wanting.</p><h4>Validation</h4>Validation rests on the basal data set validation, and should otherwise be conducted over a number of years, as the method has been used. <h4>Publication Date</h4>Open access map layer 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
     },
     {
       "type": "group",
