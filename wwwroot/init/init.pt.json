@@ -711,21 +711,21 @@
               "id": "item-landcover-gaza",
               "type": "cog",
               "name": "Cobertura da terra - Gaza",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_gaza_lc_cog.tif",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_gaza_lc_cog.tif",
               "isOpenInWorkbench": false,
               "renderOptions": {
-                "nodata": 32767,
+                "nodata": 7,
                 "resampleMethod": "nearest",
                 "single": {
                   "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
                   ],
                   "type": "discrete",
                   "useRealValue": true
@@ -742,7 +742,7 @@
                   "4": "Árvores",
                   "5": "Terra agrícola",
                   "6": "Área construída",
-                  "32767": "Sem dados"
+                  "7": "Sem dados"
                 }
               },
               "legends": [
@@ -750,43 +750,43 @@
                   "items": [
                     {
                       "title": "Água",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Solo descoberto",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terras de alcance",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Vegetação inundada",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Árvores",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terra agrícola",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Área construída",
-                      "color": "#ff0000",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }
@@ -799,21 +799,21 @@
               "id": "item-landcover-manica",
               "type": "cog",
               "name": "Cobertura da terra - Manica",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_manica_lc_cog.tif",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_manica_lc_cog.tif",
               "isOpenInWorkbench": false,
               "renderOptions": {
-                "nodata": 32767,
+                "nodata": 7,
                 "resampleMethod": "nearest",
                 "single": {
                   "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
                   ],
                   "type": "discrete",
                   "useRealValue": true
@@ -830,7 +830,7 @@
                   "4": "Árvores",
                   "5": "Terra agrícola",
                   "6": "Área construída",
-                  "32767": "Sem dados"
+                  "7": "Sem dados"
                 }
               },
               "legends": [
@@ -838,43 +838,43 @@
                   "items": [
                     {
                       "title": "Água",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Solo descoberto",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terras de alcance",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Vegetação inundada",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Árvores",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terra agrícola",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Área construída",
-                      "color": "#ff0000",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }
@@ -887,21 +887,21 @@
               "id": "item-landcover-zambezia",
               "type": "cog",
               "name": "Cobertura da terra - Zambezia",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_zambezia_lc_cog.tif",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_zambezia_lc_cog.tif",
               "isOpenInWorkbench": false,
               "renderOptions": {
-                "nodata": 32767,
+                "nodata": 7,
                 "resampleMethod": "nearest",
                 "single": {
                   "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
                   ],
                   "type": "discrete",
                   "useRealValue": true
@@ -918,7 +918,7 @@
                   "4": "Árvores",
                   "5": "Terra agrícola",
                   "6": "Área construída",
-                  "32767": "Sem dados"
+                  "7": "Sem dados"
                 }
               },
               "legends": [
@@ -926,43 +926,43 @@
                   "items": [
                     {
                       "title": "Água",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Solo descoberto",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terras de alcance",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Vegetação inundada",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Árvores",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Terra agrícola",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Área construída",
-                      "color": "#ff0000",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }

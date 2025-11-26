@@ -8,37 +8,37 @@
   "catalog": [
     {
       "type": "group",
-      "id": "item-statistics",
       "name": "Crop Statistics",
-      "isOpen": true,
       "description": "Statistical analysis of crop data.",
+      "isOpen": true,
+      "id": "item-statistics",
       "members": [
         {
           "type": "group",
-          "id": "item-statistics-district",
-          "description": "Statistical analysis of crop data by district. Coverage of crops, cultivated vs uncultivated land, and strata for each district in Gaza, Manica and Zambezia.",
           "name": "District Statistics",
+          "description": "Statistical analysis of crop data by district. Coverage of crops, cultivated vs uncultivated land, and strata for each district in Gaza, Manica and Zambezia.",
+          "id": "item-statistics-district",
           "members": [
             {
-              "id": "item-crop-percentages",
               "type": "csv",
               "name": "Crop Coverage (Area/Percentage) per District",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/crop/percentage?lang=en",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
+              "id": "item-crop-percentages",
+              "isOpenInWorkbench": false,
               "keepOnTop": true,
               "activeStyle": "percentage",
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Greens",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Greens"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "#ff3400"
+                    "color": "#ff3400",
+                    "width": 2
                   }
                 }
               },
@@ -86,7 +86,9 @@
               "defaultColumn": {
                 "name": "percentage"
               },
-              "dimensions": { "Crops": "Corn" },
+              "dimensions": {
+                "Crops": "Corn"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Crop Percentages",
@@ -137,28 +139,28 @@
               ]
             },
             {
-              "id": "item-crop-cultivated",
               "type": "csv",
-              "keepOnTop": true,
               "name": "Coverage by Farming Classes per District",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/district/farming/csv?lang=en",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
+              "id": "item-crop-cultivated",
+              "isOpenInWorkbench": false,
+              "keepOnTop": true,
+              "activeStyle": "percentage",
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Blues",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Blues"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "#ff3400"
+                    "color": "#ff3400",
+                    "width": 2
                   }
                 }
               },
-              "activeStyle": "percentage",
               "columns": [
                 {
                   "title": "Province",
@@ -195,7 +197,9 @@
               "defaultColumn": {
                 "name": "percentage"
               },
-              "dimensions": { "Farming Class": "Regular" },
+              "dimensions": {
+                "Farming Class": "Regular"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Percentages",
@@ -216,25 +220,25 @@
               ]
             },
             {
-              "id": "item-stats-strata",
               "type": "csv",
-              "keepOnTop": true,
-              "show": false,
               "name": "Strata Coverage per District",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/strata?lang=en",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
+              "show": false,
+              "id": "item-stats-strata",
+              "isOpenInWorkbench": false,
+              "keepOnTop": true,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Reds",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Reds"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "rgba(230, 230, 77, 0.8)"
+                    "color": "rgba(230, 230, 77, 0.8)",
+                    "width": 2
                   }
                 }
               },
@@ -268,7 +272,10 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
+              "dimensions": {
+                "fcname": "Regular",
+                "stratum": "Alluvial"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -349,30 +356,30 @@
         },
         {
           "type": "group",
-          "id": "item-statistics-province",
           "name": "Province Statistics",
           "description": "Statistical analysis of crop data by province. Coverage of crops, cultivated vs uncultivated land, and strata for Gaza, Manica and Zambezia provinces.",
+          "id": "item-statistics-province",
           "members": [
             {
-              "id": "item-crop-percentages-province",
               "type": "csv",
               "name": "Crop Coverage (Area/Percentage) per Province",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/crop/percentage?lang=en",
-              "isOpenInWorkbench": true,
               "hideLegendInWorkbench": false,
+              "id": "item-crop-percentages-province",
+              "isOpenInWorkbench": true,
               "keepOnTop": true,
               "activeStyle": "percentage",
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Greens",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Greens"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "#ff3400"
+                    "color": "#ff3400",
+                    "width": 2
                   }
                 }
               },
@@ -415,7 +422,9 @@
               "defaultColumn": {
                 "name": "percentage"
               },
-              "dimensions": { "Crops": "Corn" },
+              "dimensions": {
+                "Crops": "Corn"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Crop Percentages",
@@ -466,28 +475,28 @@
               ]
             },
             {
-              "id": "item-crop-cultivated-province",
               "type": "csv",
-              "keepOnTop": true,
               "name": "Coverage by Farming Classes per Province",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/farming/csv?lang=en",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
+              "id": "item-crop-cultivated-province",
+              "isOpenInWorkbench": false,
+              "keepOnTop": true,
+              "activeStyle": "percentage",
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Blues",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Blues"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "#ff3400"
+                    "color": "#ff3400",
+                    "width": 2
                   }
                 }
               },
-              "activeStyle": "percentage",
               "columns": [
                 {
                   "title": "Province",
@@ -519,7 +528,9 @@
               "defaultColumn": {
                 "name": "percentage"
               },
-              "dimensions": { "Farming Class": "Regular" },
+              "dimensions": {
+                "Farming Class": "Regular"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Percentages",
@@ -540,24 +551,24 @@
               ]
             },
             {
-              "id": "item-stats-strata-province",
               "type": "csv",
-              "keepOnTop": true,
               "name": "Strata Coverage per Province",
               "url": "https://mapfra.itc.utwente.nl/api/v2/stats/province/strata?lang=en",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": false,
+              "id": "item-stats-strata-province",
+              "isOpenInWorkbench": false,
+              "keepOnTop": true,
               "defaultStyle": {
                 "color": {
                   "nullColor": "rgba(0,255,255,0.1)",
                   "nullLabel": "No data available",
-                  "colorPalette": "Reds",
-                  "legendTicks": 5
+                  "legendTicks": 5,
+                  "colorPalette": "Reds"
                 },
                 "outline": {
                   "null": {
-                    "width": 2,
-                    "color": "rgba(230, 230, 77, 0.8)"
+                    "color": "rgba(230, 230, 77, 0.8)",
+                    "width": 2
                   }
                 }
               },
@@ -586,7 +597,10 @@
               "defaultColumn": {
                 "name": "strata_area"
               },
-              "dimensions": { "fcname": "Regular", "stratum": "Alluvial" },
+              "dimensions": {
+                "fcname": "Regular",
+                "stratum": "Alluvial"
+              },
               "availableDimensions": [
                 {
                   "layerName": "Farming Classes",
@@ -669,25 +683,22 @@
     },
     {
       "type": "group",
-      "id": "item-preparatory",
       "name": "Preparatory Data",
-      "isOpen": false,
       "description": "Preparatory Data for the analysis of crop statistics.",
+      "isOpen": false,
+      "id": "item-preparatory",
       "members": [
         {
           "type": "group",
-          "id": "item-admins",
           "name": "Administrative areas",
           "description": "Statistical analysis of crop data",
+          "id": "item-admins",
           "members": [
             {
-              "id": "item-districts",
               "type": "wms",
               "name": "Districts",
               "layers": "mapfra:mvw_districts",
-              "keepOnTop": false,
               "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": true,
               "parameters": {
                 "srs": "EPSG:3857"
@@ -704,29 +715,32 @@
                     }
                   }
                 ]
-              }
+              },
+              "id": "item-districts",
+              "isOpenInWorkbench": false,
+              "keepOnTop": false
             },
             {
-              "id": "item-province",
               "type": "wms",
               "name": "Provinces",
               "layers": "mapfra:province",
-              "keepOnTop": false,
               "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
-              "isOpenInWorkbench": false,
               "hideLegendInWorkbench": true,
               "parameters": {
                 "srs": "EPSG:3857"
-              }
+              },
+              "id": "item-province",
+              "isOpenInWorkbench": false,
+              "keepOnTop": false
             }
           ]
         },
         {
-          "id": "item-landforms",
           "type": "wms",
           "name": "Sfs Land Forms",
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "description": "<h4>Preparation</h4>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. Our data derives from the shapefiles for that publication, and landforms is only one  attribute in the data, which we generalized to multipolygon landform features. <h4>Validation</h4>Validation scripts were run to (1) mosaic the map sheets to a seamless data set, (2) test the spatial data for (OGC) simple feature correctness, and correct where necessary, and (3) test the spatially aggregated data for completeness (no gaps) and province boundary agreement, with possible adjustments. One map sheet for SE Manica was missing from the original data, and feature extents in this location were inferred from a published pdf document and Google Earth cross-checks.<h4>Publication Date</h4>Original 2013 (Cenacarta); as open access map layer 2025 (University of Twente/ITC)<h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a><h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>",
           "layers": "mapfra:mvw_landforms",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "opacity": 1,
           "parameters": {
             "srs": "EPSG:3857"
@@ -735,38 +749,20 @@
             "name": "SfS Land Form - {{landform}}",
             "template": "<table><tr><td><b>Landform Type</b></td><td>{{landform}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
           },
-          "description": "<h4>Preparation</h4>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. Our data derives from the shapefiles for that publication, and landforms is only one  attribute in the data, which we generalized to multipolygon landform features. <h4>Validation</h4>Validation scripts were run to (1) mosaic the map sheets to a seamless data set, (2) test the spatial data for (OGC) simple feature correctness, and correct where necessary, and (3) test the spatially aggregated data for completeness (no gaps) and province boundary agreement, with possible adjustments. One map sheet for SE Manica was missing from the original data, and feature extents in this location were inferred from a published pdf document and Google Earth cross-checks.<h4>Publication Date</h4>Original 2013 (Cenacarta); as open access map layer 2025 (University of Twente/ITC)<h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a><h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
+          "id": "item-landforms"
         },
         {
           "type": "group",
-          "id": "item-landcover",
           "name": "Land Cover",
+          "description": "Land use/Land cover for Gaza, Manica and Zambezia. These datasets can not be displayed in the 2D viewer. Switch to one of the 3D map modes in <em>Map Settings</em>.<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>",
           "isOpen": false,
+          "id": "item-landcover",
           "members": [
             {
-              "id": "item-landcover-gaza",
               "type": "cog",
               "name": "Land Cover - Gaza",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_gaza_lc_cog.tif",
-              "isOpenInWorkbench": false,
-              "renderOptions": {
-                "nodata": 32767,
-                "resampleMethod": "nearest",
-                "single": {
-                  "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
-                  ],
-                  "type": "discrete",
-                  "useRealValue": true
-                }
-              },
+              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_gaza_lc_cog.tif",
               "featureInfoTemplate": {
                 "name": "Land Cover",
                 "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
@@ -777,8 +773,26 @@
                   "3": "Flooded vegetation",
                   "4": "Trees",
                   "5": "Cropland",
-                  "6": "Built up",
-                  "32767": "No data"
+                  "6": "Building",
+                  "7": "No data"
+                }
+              },
+              "renderOptions": {
+                "nodata": 7,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
                 }
               },
               "legends": [
@@ -786,75 +800,57 @@
                   "items": [
                     {
                       "title": "Water",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Bare ground",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Rangeland",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Flooded vegetation",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Trees",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Cropland",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
-                      "title": "Built up",
-                      "color": "#ff0000",
+                      "title": "Buildings",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }
                   ]
                 }
               ],
-              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+              "id": "item-landcover-gaza",
+              "isOpenInWorkbench": false
             },
             {
-              "id": "item-landcover-manica",
               "type": "cog",
               "name": "Land Cover - Manica",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_manica_lc_cog.tif",
-              "isOpenInWorkbench": false,
-              "renderOptions": {
-                "nodata": 32767,
-                "resampleMethod": "nearest",
-                "single": {
-                  "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
-                  ],
-                  "type": "discrete",
-                  "useRealValue": true
-                }
-              },
+              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_manica_lc_cog.tif",
               "featureInfoTemplate": {
                 "name": "Land Cover",
                 "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
@@ -865,8 +861,26 @@
                   "3": "Flooded vegetation",
                   "4": "Trees",
                   "5": "Cropland",
-                  "6": "Built up",
-                  "32767": "No data"
+                  "6": "Building",
+                  "7": "No data"
+                }
+              },
+              "renderOptions": {
+                "nodata": 7,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
                 }
               },
               "legends": [
@@ -874,75 +888,57 @@
                   "items": [
                     {
                       "title": "Water",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Bare ground",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Rangeland",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Flooded vegetation",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Trees",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Cropland",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
-                      "title": "Built up",
-                      "color": "#ff0000",
+                      "title": "Buildings",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }
                   ]
                 }
               ],
-              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+              "id": "item-landcover-manica",
+              "isOpenInWorkbench": false
             },
             {
-              "id": "item-landcover-zambezia",
               "type": "cog",
               "name": "Land Cover - Zambezia",
-              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2024_zambezia_lc_cog.tif",
-              "isOpenInWorkbench": false,
-              "renderOptions": {
-                "nodata": 32767,
-                "resampleMethod": "nearest",
-                "single": {
-                  "colors": [
-                    [0, "#3399FF"],
-                    [1, "#732600"],
-                    [2, "#98e600"],
-                    [3, "#00ffc5"],
-                    [4, "#00734c"],
-                    [5, "#df73ff"],
-                    [6, "#ff0000"],
-                    [32767, "rgba(255, 255, 255, 0)"]
-                  ],
-                  "type": "discrete",
-                  "useRealValue": true
-                }
-              },
+              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>",
+              "url": "https://cogs-mafra.s3.us-east-1.amazonaws.com/landcover/2025_zambezia_lc_cog.tif",
               "featureInfoTemplate": {
                 "name": "Land Cover",
                 "template": "Land Cover: {{#terria.partialByName}}{{0}}{{/terria.partialByName}}",
@@ -953,8 +949,26 @@
                   "3": "Flooded vegetation",
                   "4": "Trees",
                   "5": "Cropland",
-                  "6": "Built up",
-                  "32767": "No data"
+                  "6": "Building",
+                  "7": "No data"
+                }
+              },
+              "renderOptions": {
+                "nodata": 7,
+                "resampleMethod": "nearest",
+                "single": {
+                  "colors": [
+                    [0, "#0064c8"],
+                    [1, "#b4b4b4"],
+                    [2, "#ffbb22"],
+                    [3, "#00cf75"],
+                    [4, "#006400"],
+                    [5, "#f096ff"],
+                    [6, "#fa0000"],
+                    [7, "rgba(255, 255, 255, 0)"]
+                  ],
+                  "type": "discrete",
+                  "useRealValue": true
                 }
               },
               "legends": [
@@ -962,68 +976,68 @@
                   "items": [
                     {
                       "title": "Water",
-                      "color": "#3399FF",
+                      "color": "#0064c8",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Bare ground",
-                      "color": "#732600",
+                      "color": "#b4b4b4",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Rangeland",
-                      "color": "#98e600",
+                      "color": "#ffbb22",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Flooded vegetation",
-                      "color": "rgba(230, 230, 77, 0.8)",
+                      "color": "#00cf75",
                       "outlineColor": "#00ffc5",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Trees",
-                      "color": "#00734c",
+                      "color": "#006400",
                       "outlineColor": "#995077",
                       "addSpacingAbove": true
                     },
                     {
                       "title": "Cropland",
-                      "color": "#df73ff",
+                      "color": "#f096ff",
                       "outlineColor": "#7d73b2",
                       "addSpacingAbove": true
                     },
                     {
-                      "title": "Built up",
-                      "color": "#ff0000",
+                      "title": "Buildings",
+                      "color": "#fa0000",
                       "outlineColor": "#A0C9A3",
                       "addSpacingAbove": true
                     }
                   ]
                 }
               ],
-              "description": "<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+              "id": "item-landcover-zambezia",
+              "isOpenInWorkbench": false
             }
-          ],
-          "description": "Land use/Land cover for Gaza, Manica and Zambezia. These datasets can not be displayed in the 2D viewer. Switch to one of the 3D map modes in <em>Map Settings</em>.<h4>Data Preparation</h4><p>A time-series of optical multispectral images from Sentinel-2 and Synthetic Aperture Radar (SAR) data from Sentinel-1 acquired in 2023 together with the Digital Elevation Model (DEM) were classified by testing and comparing different Machine Learning solutions. After the data preparation step, we extracted relevant features to enhance the classification results (i.e., textural features, spectral indexes, etc).  The resulting output is a pixel-based land cover map for 2023 for the entire Gaza province.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene, which are <em>Water</em>, <em>Maize</em>, <em>Flooded Vegetation</em>, <em>Mixed Fields</em>, <em>Built-up</em>, <em>Shrub</em>, <em>Trees</em>, <em>Bare</em>, <em>Grass</em> and <em>Rice</em>. The samples were labeled by photo-interpretation of VHR satellite images.</p><h4>Data Validation</h4><p>For the quantitative evaluation, a set of labeled samples was split into training and test sets(1274 points), considering spatially disjoint locations to ensure statistically independent results. The quantitative results were confirmed by the qualitative analysis carried out by checking the obtained map (see example below).</p><img src='/images/landcover-validation.png' width='100%'><h4>Error Matrix</h4><img src='/images/landcover-errormatrix.png' width='100%'><h4>Findings</h4><ol><li>Stratified random sampling ensures a strong representation of the main classes present in the scene.</li><li>The combination of SAR, DEM and Multispectral data as well as the use of the temporal information allows for reliable identification of the agricultural areas.</li><li>Unlike existing global-scale products, our approach is specifically tailored to the study area, resulting in a more customized classifier.</li><li>By leveraging the photo-interpretation of VHR satellite data conducted by an external company within the sampling areas to distinguish cultivated from uncultivated land, we compare our crop/no-crop maps with the ESRI product (currently the best product at global scale). Our results significantly enhance the identification of cultivated areas (see below).</li></ol><img src='/images/landcover-result.png' width='100%'><h4>Error Explanation</h4><ol><li>Sentinel-2 and Sentinel-1 offer a spatial resolution of 10m. This is good but Mozambique's complex agricultural landscape—characterized by smallholder farms, intercropping, and the presence of grasslands and trees within fields—poses significant challenges.</li><li>The distinction between grassland, cropland, and rangeland is ill-posed in the study area due to the absence of well-defined agricultural practices.</li><li>Collecting additional reference data in the field would improve the accuracy of the results.</li></ol><h4>Resources</h4><a href='/docs/SFS_Moz_2024_06_18_ITC_CP_v1.pdf' target='_blank'>Remote sensing for crop type mapping</a>"
+          ]
         },
         {
-          "id": "item-ndvi",
           "type": "wms",
           "name": "NDVI Profiles",
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
+          "description": "<h4>Preparation</h4><p>This is a hypertemporal NDVI map for Mozambique at a 1 km2 resolution, based on Copernicus NDVI 1999-2020 (raster 1 km), global, 10-daily, version 3. DOI: <a href='https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248'>https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248</a> As per that source, NDVI values are scored on a [0,250] scale.</p><p>Our data presents a long-term, coarse-resolution NDVI time series derived from 36 10-day composites of SPOT-VGT (-2013) and PROBA-V (2014-) imagery over 20 years. Each dekad composite selects the maximum NDVI value across available daily observations within the 10 days to minimize cloud and haze effects, while emphasizing the vegetation greenness. Per location (pixel) and per dekad this gives 20 readings, of which we determine the 10-, 50- and 90- percentile, leading to three (10,50,90) NDVI development curves with 36 time points in the year.</p><p>These curves are shown from the pixel query in the data layer. Pixel-level curve similarity in this long-term series identifies areas with similar seasonal trajectories, while reflecting in their magnitude the variations in vegetation phenology, vigor, productivity, and management intensity.  We applied an ISODATA clustering algorithm over all pixels' NDVI curves that led to 61 clusters, which are represented in the colour legend.  In subsequent process to define strata, clusters may be taken together, especially when they appear to express NDVI gradients.</p> <h4>Validation</h4>No specific validation has taken place, other than visual inspection of the spatial patterns that occur in the data and whether they meet expectation and seem  reasonable. <h4>Publication Date</h4>Open access raster layer, 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>",
           "layers": "mapfra:ndvi",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
           "hideLegendInWorkbench": true,
           "opacity": 1,
           "show": true,
+          "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
           "parameters": {
             "srs": "EPSG:3857",
             "version": "1.1.1"
           },
-          "getFeatureInfoUrl": "https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile",
           "featureInfoTemplate": {
             "name": "NDVI Cluster {{GRAY_INDEX}}",
             "template": "<p>NDVI Profile.</p><chart title='NDVI profile' chart-type='line' src='https://mapfra.itc.utwente.nl/api/v2/ows/ndvi/profile/{{GRAY_INDEX}}/csv' x-column='Dekad' y-columns='10-th Percentile,50-th Percentile,90-th Percentile' column-units='Dekad'></chart>"
@@ -1050,14 +1064,14 @@
               }
             ]
           },
-          "description": "<h4>Preparation</h4><p>This is a hypertemporal NDVI map for Mozambique at a 1 km2 resolution, based on Copernicus NDVI 1999-2020 (raster 1 km), global, 10-daily, version 3. DOI: <a href='https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248'>https://doi.org/10.2909/8048eb1c-8579-45c6-b188-b0a26ef26248</a> As per that source, NDVI values are scored on a [0,250] scale.</p><p>Our data presents a long-term, coarse-resolution NDVI time series derived from 36 10-day composites of SPOT-VGT (-2013) and PROBA-V (2014-) imagery over 20 years. Each dekad composite selects the maximum NDVI value across available daily observations within the 10 days to minimize cloud and haze effects, while emphasizing the vegetation greenness. Per location (pixel) and per dekad this gives 20 readings, of which we determine the 10-, 50- and 90- percentile, leading to three (10,50,90) NDVI development curves with 36 time points in the year.</p><p>These curves are shown from the pixel query in the data layer. Pixel-level curve similarity in this long-term series identifies areas with similar seasonal trajectories, while reflecting in their magnitude the variations in vegetation phenology, vigor, productivity, and management intensity.  We applied an ISODATA clustering algorithm over all pixels' NDVI curves that led to 61 clusters, which are represented in the colour legend.  In subsequent process to define strata, clusters may be taken together, especially when they appear to express NDVI gradients.</p> <h4>Validation</h4>No specific validation has taken place, other than visual inspection of the spatial patterns that occur in the data and whether they meet expectation and seem  reasonable. <h4>Publication Date</h4>Open access raster layer, 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
+          "id": "item-ndvi"
         },
         {
-          "id": "item-farmingclasses",
           "type": "wms",
           "name": "Sfs Farming Intensity",
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+          "description": "<h4>Preparation</h4><p>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. For Gaza province, our data derives from the shapefiles for that publication, and farming intensity is only one attribute in the data, which we generalized to multipolygon farming intensity features features. For Zambezia and Manica, we uses a more experimental set-up.</p><p>We applied a time series of Sentinel-1/-2 images to construct three seasonal composities representing early, later and dry vegetation peaks.  Additional topographic information came from SRTM. Geometric, textural and spectral features were extracted with texture applying the GLCM method, producing ASM, CO, CORR, VAR, IDF, ENT, DVAR and DENT scores. Seven spectral features were derived: NDVI, EVI, NDWI, GNDVI, SAVI, NDMI and BSI. The three topological features were elevation, aspect and slope. Land cover reference samples came from SfS fieldwork, augmented with data from the 2023 Esri Global Land Cover dataset.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene. Figure 8.2 illustrates the number of samples and the spatial distribution of the reference data across the considered set of land-cover classes, which are Water, Maize, Flooded Vegetation, Mixed Fields, Built-up, Shrub, Trees, Bare, Grass and Rice.</p><p>Several machine learning algorithms were tested and compared to determine the most effective solutions, including Random Forest, Support Vector Machine, Decision Tree and xgBoost. The output is a land cover raster, which for the purpose of derving a farming intensity map is transformed into a crop/no crop raster.</p><p>In the final stage of producing this data, we apply a hexagon grid with cell size of 100 ha over the area and determine frequency of crop cells in the crop/no crop raster. These frequencies are classified as 'no farming', 'scarce farming' and 'regular farming', using frequency cut-offs: < 5%, 5-20%, 20-100%.  A smoothing operator removes single hexagon cells that are entirely embedded in a ring of six cells of one single farming intensity class.  Cells of same class are aggregated to multipolygons.</p> <h4>Validation</h4>Validation scripts were run on several phases of the construction process: the stratified classification in its various disguises and hexagon map construction.     We must still conduct a comparison study with Gaza faming intensity as used and as     would have been used under the experimental set-up used for Zambezia and Manica. <h4>Publication Date</h4>Original 2013 (Cenacarta); as open access multipolygon layer 2025(University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>",
           "layers": "mapfra:mvw_farmingclasses",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "opacity": 1,
           "parameters": {
             "srs": "EPSG:3857"
@@ -1066,16 +1080,16 @@
             "name": "Farming Intensity - {{fcname}}",
             "template": "<table><tr><td><b>Farming class</b></td><td>{{fcname}}</td><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
           },
-          "description": "<h4>Preparation</h4><p>Land use/land cover data for the three provinces were kindly obtained from Cenacarta, Maputo in May 2023 (Gaza) and again in May 2024 (Zambezia, Manica). The data were originally developed in the years 2010--2012, and published as paper soil map sheets, at scale 1:250,000, for all (or most) of Mozambique in 2013. For Gaza province, our data derives from the shapefiles for that publication, and farming intensity is only one attribute in the data, which we generalized to multipolygon farming intensity features features. For Zambezia and Manica, we uses a more experimental set-up.</p><p>We applied a time series of Sentinel-1/-2 images to construct three seasonal composities representing early, later and dry vegetation peaks.  Additional topographic information came from SRTM. Geometric, textural and spectral features were extracted with texture applying the GLCM method, producing ASM, CO, CORR, VAR, IDF, ENT, DVAR and DENT scores. Seven spectral features were derived: NDVI, EVI, NDWI, GNDVI, SAVI, NDMI and BSI. The three topological features were elevation, aspect and slope. Land cover reference samples came from SfS fieldwork, augmented with data from the 2023 Esri Global Land Cover dataset.</p><p>A stratified random sampling approach was employed to ensure a statistical representation of the various classes in the scene. Figure 8.2 illustrates the number of samples and the spatial distribution of the reference data across the considered set of land-cover classes, which are Water, Maize, Flooded Vegetation, Mixed Fields, Built-up, Shrub, Trees, Bare, Grass and Rice.</p><p>Several machine learning algorithms were tested and compared to determine the most effective solutions, including Random Forest, Support Vector Machine, Decision Tree and xgBoost. The output is a land cover raster, which for the purpose of derving a farming intensity map is transformed into a crop/no crop raster.</p><p>In the final stage of producing this data, we apply a hexagon grid with cell size of 100 ha over the area and determine frequency of crop cells in the crop/no crop raster. These frequencies are classified as 'no farming', 'scarce farming' and 'regular farming', using frequency cut-offs: < 5%, 5-20%, 20-100%.  A smoothing operator removes single hexagon cells that are entirely embedded in a ring of six cells of one single farming intensity class.  Cells of same class are aggregated to multipolygons.</p> <h4>Validation</h4>Validation scripts were run on several phases of the construction process: the stratified classification in its various disguises and hexagon map construction.     We must still conduct a comparison study with Gaza faming intensity as used and as     would have been used under the experimental set-up used for Zambezia and Manica. <h4>Publication Date</h4>Original 2013 (Cenacarta); as open access multipolygon layer 2025(University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
+          "id": "item-farmingclasses"
         }
       ]
     },
     {
-      "id": "item-strata",
       "type": "wms",
       "name": "Sfs Agro-ecological Strata",
-      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
+      "description": "<h4>Preparation</h4><p>Based on SfS Landforms, SfS NDVI Profiles and SfS Farming intensity data, we derive per province a set of agro-ecological strata. These should be understood as homogeneous areas within which vegetation growth displays high similarity in vigor, timing and intensity throughout a typical year.</p><p>Strata derivation is predominantly a process of conducting a three-way spatial intersection of polygonic data layers.  By construction, a resulting feature is associated with a single province, a single farming intensity class and a single landform.  This leads to a large collection of candidate strata, not all of which will be accepted as final strata.  As rule of thumb, will we only include strata that are above the area threshold set by considering that we plan to have 100 SAs in the province, so considering the total area of scarce and regular farming, the strata size threshold is 1% of that total.  Strata below that threshold can be made part of an established stratum when they meet three criteria: (a) the two strata are in the same landform and farming intensity class, (b) their geometry parts are mostly neighbouring the included stratum geometry (so they help shape larger geometry parts when unioned), and (c) their NDVI profile can be considered as a gradient version of the included stratum NDVI profile. That is, the associated NDVI curves look like vertically translated versions of each other.  Where a candidate stratum meets the two conditions with more than one established stratum, expert judgment shall decide on basis of NDVI curve similarity and established stratum size, where smaller is better.</p><p>This process of adding smaller candidate strata to established strata continues until no candidates exist that meet the merger criteria.  Smoothening takes place on the (possibly unioned) geometries: small parts and small holes are removed using a size threshold. This step is required to allow the identification of sufficiently many SAs later in the workflow. The experimental strata defined for Gaza in 2023, used in 2024 was retained for the 2025 fieldwork campaign.  This was done because comparison between the two years was considered wanting.</p><h4>Validation</h4>Validation rests on the basal data set validation, and should otherwise be conducted over a number of years, as the method has been used. <h4>Publication Date</h4>Open access map layer 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>",
       "layers": "mapfra:mvw_strata",
+      "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
       "opacity": 1,
       "show": true,
       "parameters": {
@@ -1085,22 +1099,21 @@
         "name": "Sfs Agro-ecological Strata - {{stratum}}",
         "template": "<table><tr><td><b>Stratum</b></td><td>{{stratum}}</td></tr><tr><td><b>Landform</b></td><td>{{landform}}</td></tr><tr><td><b>Farming class</b></td><td>{{fcname}}</td></tr><tr><td><b>Province</b></td><td>{{province}}</td></tr></table>"
       },
-      "isOpenInWorkbench": false,
-      "description": "<h4>Preparation</h4><p>Based on SfS Landforms, SfS NDVI Profiles and SfS Farming intensity data, we derive per province a set of agro-ecological strata. These should be understood as homogeneous areas within which vegetation growth displays high similarity in vigor, timing and intensity throughout a typical year.</p><p>Strata derivation is predominantly a process of conducting a three-way spatial intersection of polygonic data layers.  By construction, a resulting feature is associated with a single province, a single farming intensity class and a single landform.  This leads to a large collection of candidate strata, not all of which will be accepted as final strata.  As rule of thumb, will we only include strata that are above the area threshold set by considering that we plan to have 100 SAs in the province, so considering the total area of scarce and regular farming, the strata size threshold is 1% of that total.  Strata below that threshold can be made part of an established stratum when they meet three criteria: (a) the two strata are in the same landform and farming intensity class, (b) their geometry parts are mostly neighbouring the included stratum geometry (so they help shape larger geometry parts when unioned), and (c) their NDVI profile can be considered as a gradient version of the included stratum NDVI profile. That is, the associated NDVI curves look like vertically translated versions of each other.  Where a candidate stratum meets the two conditions with more than one established stratum, expert judgment shall decide on basis of NDVI curve similarity and established stratum size, where smaller is better.</p><p>This process of adding smaller candidate strata to established strata continues until no candidates exist that meet the merger criteria.  Smoothening takes place on the (possibly unioned) geometries: small parts and small holes are removed using a size threshold. This step is required to allow the identification of sufficiently many SAs later in the workflow. The experimental strata defined for Gaza in 2023, used in 2024 was retained for the 2025 fieldwork campaign.  This was done because comparison between the two years was considered wanting.</p><h4>Validation</h4>Validation rests on the basal data set validation, and should otherwise be conducted over a number of years, as the method has been used. <h4>Publication Date</h4>Open access map layer 2025 (University of Twente/ITC) <h4>Contact</h4>Chiel Stroeven, University of Twente/ITC, <a href='mailto:m.h.stroeven@utwente.nl'>m.h.stroeven@utwente.nl</a> <h4>License</h4>CC-BY-NC-SA, <a href='https://creativecommons.org/licenses/by-nc-sa/4.0'>https://creativecommons.org/licenses/by-nc-sa/4.0</a>"
+      "id": "item-strata",
+      "isOpenInWorkbench": false
     },
     {
       "type": "group",
-      "id": "item-field-data",
       "name": "Field Work Data",
-      "isOpen": false,
       "description": "Field work data.",
+      "isOpen": false,
+      "id": "item-field-data",
       "members": [
         {
-          "id": "item-plots",
           "type": "wms",
           "name": "Sampling Areas (SA)",
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
           "layers": "mapfra:plots",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms",
           "opacity": 1,
           "parameters": {
             "srs": "EPSG:3857",
@@ -1117,18 +1130,19 @@
               "imageScaling": 0.5,
               "url": "https://mapfra.itc.utwente.nl/geoserver/mapfra/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&STRICT=false&style=mapfra:sample_plots500&LEGEND_OPTIONS=fontName%3ACourier%3fontSize%3A10%3BforceLabels%3Aon%3BfontAntiAliasing%3Atrue%3BlabelMargin%3A5%3BfontColor%3A0xffffff%3Bdpi%3A182&transparent=true"
             }
-          ]
+          ],
+          "id": "item-plots"
         },
         {
-          "id": "item-segmentscores",
           "type": "wms",
           "name": "Segment Crop Scores",
-          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "layers": "mapfra:segment_crop_scores",
+          "url": "https://mapfra.itc.utwente.nl/geoserver/gwc/service/wms?version=1.1.1",
           "opacity": 1,
           "parameters": {
             "srs": "EPSG:3857"
-          }
+          },
+          "id": "item-segmentscores"
         }
       ]
     }
