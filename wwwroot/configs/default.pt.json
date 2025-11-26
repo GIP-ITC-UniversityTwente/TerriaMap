@@ -1,6 +1,6 @@
 {
   "initializationUrls": [
-    "https://mapfra.itc.utwente.nl/api/v2/ows/layers/pt/config.json"
+    "https://mapfra.itc.utwente.nl/api/v2/ows/layers/po/config.json"
   ],
   "parameters": {
     "enableConsoleAnalytics": false,
